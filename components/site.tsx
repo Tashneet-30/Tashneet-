@@ -15,6 +15,9 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <a href={`mailto:${site.email}`} className="nav-cta">
+            Say hello
+          </a>
         </nav>
       </div>
     </header>

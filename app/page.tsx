@@ -5,7 +5,7 @@ import {
   PastWork,
   RecognitionList,
 } from "@/components/site";
-import { HeroAside, FocusPillars } from "@/components/hero-visual";
+import { HeroAside } from "@/components/hero-visual";
 import { site } from "@/lib/content";
 
 export default function AboutPage() {
@@ -65,8 +65,6 @@ export default function AboutPage() {
             </div>
             <HeroAside />
           </div>
-
-          <FocusPillars />
         </div>
       </section>
 
