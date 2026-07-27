@@ -158,6 +158,69 @@ a:hover {
   color: var(--accent);
 }
 
+.story-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.story-list li {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin-bottom: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.story-emoji {
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.recognition-section {
+  margin: 2.5rem 0;
+}
+
+.recognition-intro {
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.recognition-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recognition-item {
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.recognition-item:last-child {
+  padding-bottom: 0;
+}
+
+.recognition-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.recognition-detail {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 .inline-link {
   display: inline;
 }

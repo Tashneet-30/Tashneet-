@@ -31,16 +31,17 @@ export default function ResearchPage() {
 
       <div className="thesis-block" style={{ marginTop: "2rem" }}>
         <h2 style={{ marginTop: 0 }}>Ongoing Thesis</h2>
-        <p className="research-title" style={{ fontSize: "1rem" }}>
-          EV Charging Infrastructure Planning &amp; Optimization for Multi-Unit Residential Buildings
-        </p>
-        <p className="research-meta">
-          Wilfrid Laurier University · Master of Applied Computing (Thesis) · 2025–2027
-        </p>
-        <p className="research-description">
-          Developing machine learning models and analytics for HIEV-AI — forecasting charging
-          demand, optimizing charger placement, estimating financial returns, and supporting
-          capacity planning under real electrical and spatial constraints. Industry partner:{" "}
+        <p className="research-description" style={{ margin: 0 }}>
+          EV charging infrastructure planning for multi-unit residential
+          buildings — ML developer on{" "}
+          <a
+            href="https://elocitytech.com/elocity-laurier-hiev-ai-ev-charging/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            HIEV-AI
+          </a>{" "}
+          with{" "}
           <a
             href="https://elocitytech.com/"
             target="_blank"
@@ -48,15 +49,8 @@ export default function ResearchPage() {
           >
             Elocity Technologies
           </a>
-          . Funded by the{" "}
-          <a
-            href="https://www.oc-innovation.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ontario Centre of Innovation
-          </a>
-          .
+          , funded by the Ontario Centre of Innovation. Wilfrid Laurier
+          University · 2025–2027.
         </p>
       </div>
     </div>

@@ -2,7 +2,7 @@ export const site = {
   name: "Tashneet Kaur",
   title: "Tashneet Kaur — AI & Smart Mobility",
   description:
-    "Graduate researcher building AI systems for EV infrastructure planning, transit demand forecasting, and sustainable urban mobility.",
+    "Graduate researcher and ML developer building AI for EV infrastructure, transit systems, and sustainable urban mobility.",
   url: "https://tashneet-30.github.io/Tashneet-",
   email: "kaur6910@mylaurier.ca",
   location: "Waterloo, Ontario, Canada",
@@ -20,15 +20,24 @@ export const nav = [
   { href: "/research", label: "Research" },
 ];
 
-export const highlights = [
+export type StoryItem = {
+  emoji?: string;
+  text: string;
+  link?: { href: string; label: string };
+  suffix?: string;
+};
+
+export const storyItems: StoryItem[] = [
   {
-    text: "HIEV-AI — building machine learning models for EV charging infrastructure planning in multi-unit residential buildings (MURBs), in collaboration with ",
+    emoji: "⚡",
+    text: "HIEV-AI — the machine learning developer on an OCI-funded platform with ",
     link: { href: "https://elocitytech.com/", label: "Elocity Technologies" },
     suffix:
-      " and supported by the Ontario Centre of Innovation (OCI).",
+      " and Laurier, building AI tools that help property developers plan EV charging in multi-unit residential buildings.",
   },
   {
-    text: "Digital twin–based multi-horizon passenger demand forecasting for public transit — manuscript accepted in ",
+    emoji: "🚆",
+    text: "Digital twin–based passenger demand forecasting for public transit — manuscript accepted in ",
     link: {
       href: "https://www.sciencedirect.com/journal/future-generation-computer-systems",
       label: "Future Generation Computer Systems (Elsevier)",
@@ -36,23 +45,54 @@ export const highlights = [
     suffix: ".",
   },
   {
-    text: "WayWise — real-time AI-driven emergency vehicle routing and traffic analysis for smart cities.",
+    emoji: "🚨",
+    text: "WayWise — a real-time AI system for emergency vehicle routing and smart city traffic analysis.",
   },
   {
-    text: "Graduate Teaching Assistant at Wilfrid Laurier University (CP363 & CP373) — databases, programming, and student mentorship.",
+    emoji: "🌐",
+    text: "Open-source developer at the ",
+    link: { href: "https://www.khalisfoundation.org/", label: "Khalis Foundation" },
+    suffix:
+      ", shipping AI-powered features to the Hazur app with an international team through pull requests and collaborative development.",
   },
   {
-    text: "Open-source contributions to the Hazur platform at Khalis Foundation — AI features with FastAPI, React, and PostgreSQL.",
+    emoji: "🔐",
+    text: "SOC Analyst at SafeAeon Inc. — monitoring threats with Rapid7 SIEM and SentinelOne, investigating incidents, and learning how to think under pressure in fast-moving security environments.",
   },
   {
-    text: "CSIR-CRRI Young Researchers' Conclave — 3rd place nationally for transportation-related research (New Delhi, 2023).",
+    emoji: "📋",
+    text: "Service Delivery Manager at SafeAeon — leading client communication, SLA operations, and cross-functional technical teams before moving into research.",
+  },
+  {
+    emoji: "📚",
+    text: "Graduate Teaching Assistant at Laurier (CP363 & CP373) — helping students with programming, SQL, and databases while pursuing my own thesis.",
+  },
+  {
+    emoji: "🤝",
+    text: "Graduate International Student Leader at Laurier International — mentoring international students and building inclusive campus communities.",
   },
 ];
 
-export const recognition = [
-  "William Nikolaus Martin Science Scholarship — Wilfrid Laurier University (2025)",
-  "OCI Collaborate 2 Commercialize (C2C) — HIEV-AI research funding with Elocity Technologies",
-  "CSIR-CRRI Young Researchers' Conclave — 3rd Place, National Level (2023)",
+export type Recognition = {
+  title: string;
+  detail: string;
+};
+
+export const recognition: Recognition[] = [
+  {
+    title: "William Nikolaus Martin Science Scholarship",
+    detail: "Wilfrid Laurier University, 2025 — supporting my graduate studies in applied computing and research.",
+  },
+  {
+    title: "OCI Collaborate 2 Commercialize (C2C)",
+    detail:
+      "Funding the HIEV-AI collaboration between Laurier and Elocity Technologies — taking applied AI research from the lab into real-world EV infrastructure planning.",
+  },
+  {
+    title: "CSIR-CRRI Young Researchers' Conclave — 3rd Place",
+    detail:
+      "National-level recognition in New Delhi, 2023 — early validation that research at the intersection of computing and transportation was worth pursuing.",
+  },
 ];
 
 export type Project = {
@@ -69,12 +109,11 @@ export const projects: Project[] = [
     slug: "hiev-ai",
     title: "HIEV-AI — EV Infrastructure Planning for MURBs",
     description:
-      "OCI-funded collaboration between Laurier and Elocity Technologies. I lead machine learning development on a modular, data-driven analytics platform for EV infrastructure planning and optimization in multi-unit residential buildings — forecasting demand, estimating ROI, modeling capacity constraints, and integrating rebate and utility data to help developers and property managers make smarter charging investments.",
+      "I'm the ML developer on this OCI-funded Laurier × Elocity collaboration — building models that forecast charging demand, estimate ROI, and help property managers plan smarter EV infrastructure in multi-unit residential buildings.",
     tags: [
       "Machine Learning",
       "EV Infrastructure",
       "MURBs",
-      "ROI Modeling",
       "Python",
       "Smart Mobility",
     ],
@@ -90,7 +129,7 @@ export const projects: Project[] = [
     slug: "digital-twin-transit",
     title: "Digital Twin Transit Demand Forecasting",
     description:
-      "A digital twin–based multi-horizon framework for forecasting passenger demand on public transit networks. Combines historical ridership patterns, spatial data, and deep learning to support planning decisions at multiple time horizons.",
+      "A digital twin framework for forecasting passenger demand across multiple time horizons on public transit networks — combining spatial data, ridership patterns, and deep learning.",
     tags: [
       "Digital Twins",
       "Deep Learning",
@@ -104,14 +143,14 @@ export const projects: Project[] = [
     slug: "waywise",
     title: "WayWise — Smart Emergency Vehicle Routing",
     description:
-      "Real-time AI system integrating traffic analysis and smart city infrastructure to optimize emergency vehicle routing. Designed to reduce response times through intelligent path planning and low-level software processing.",
+      "Real-time AI system that integrates traffic analysis and smart city infrastructure to optimize emergency vehicle routing and reduce response times.",
     tags: ["AI", "Real-time Systems", "Smart Cities", "Routing", "Python"],
   },
   {
     slug: "hazur",
     title: "Hazur — Open Source at Khalis Foundation",
     description:
-      "Contributed AI-powered features to the Hazur application as part of an international open-source team. Built with JavaScript, FastAPI, HTML/CSS, and PostgreSQL — shipping features through pull requests and collaborative development.",
+      "Contributed AI-powered features to Hazur as part of a global open-source team — shipping through pull requests with JavaScript, FastAPI, and PostgreSQL.",
     tags: ["FastAPI", "React", "PostgreSQL", "Open Source", "Generative AI"],
     links: [{ href: "https://github.com/Tashneet-30", label: "GitHub" }],
   },
@@ -119,7 +158,7 @@ export const projects: Project[] = [
     slug: "money-minded",
     title: "Money Minded — Monte Carlo Investment Analysis",
     description:
-      "Finance management application using Monte Carlo simulations for investment decision-making. Focused on backend optimization and scalable performance for real-time stock data analysis.",
+      "Finance app using Monte Carlo simulations for investment decisions — focused on backend performance and scalable data pipelines.",
     tags: ["Monte Carlo", "Python", "Backend", "Data Science"],
   },
 ];
@@ -161,26 +200,5 @@ export const publications: Publication[] = [
       "Deep Scene Fusion: A Hybrid Deep Learning-CNN Approach for Scene Recognition",
     venue: "ICDAM",
     year: "2024",
-  },
-];
-
-export const thesisPhases = [
-  {
-    phase: "Planning Phase",
-    period: "Months 1–12",
-    focus:
-      "EV infrastructure forecasting, capacity analysis, and financial modeling — helping stakeholders determine charger capacity, CapEx/OpEx, ROI, payback periods, and applicable rebates.",
-  },
-  {
-    phase: "Expansion & Operations",
-    period: "Months 13–18",
-    focus:
-      "Real-time utilization analytics, predictive maintenance, dynamic load balancing, and V2G integration — including shared-use configurations and demand forecasting for equitable scheduling.",
-  },
-  {
-    phase: "Testing & Validation",
-    period: "Months 19–24",
-    focus:
-      "Real-world pilots at three Ontario sites with Elocity and stakeholders — validating platform performance, user satisfaction, and commercialization readiness.",
   },
 ];

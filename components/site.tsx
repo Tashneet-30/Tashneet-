@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, site } from "@/lib/content";
+import { nav, recognition, site, storyItems } from "@/lib/content";
 
 export function Header() {
   return (
@@ -92,6 +92,54 @@ export function ProjectCard({
         </div>
       )}
     </article>
+  );
+}
+
+export function StoryList() {
+  return (
+    <ul className="story-list">
+      {storyItems.map((item, i) => (
+        <li key={i}>
+          {item.emoji && <span className="story-emoji">{item.emoji}</span>}
+          <span>
+            {item.text}
+            {item.link && (
+              <a
+                href={item.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-link"
+              >
+                {item.link.label}
+              </a>
+            )}
+            {item.suffix}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function RecognitionList() {
+  return (
+    <section className="recognition-section">
+      <h2>Recognition</h2>
+      <p className="recognition-intro">
+        It&apos;s important to acknowledge the organizations and programs that
+        have supported me along the way. As someone still early in my research
+        career, it can be hard to feel credible in what you do — but these
+        believed in the work before I fully did:
+      </p>
+      <ul className="recognition-list">
+        {recognition.map((item) => (
+          <li key={item.title} className="recognition-item">
+            <strong className="recognition-title">{item.title}</strong>
+            <span className="recognition-detail">{item.detail}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
