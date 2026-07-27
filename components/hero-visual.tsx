@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProfilePhoto } from "./profile-photo";
 import { site } from "@/lib/content";
 
 const pillars = [
@@ -25,6 +26,8 @@ const pillars = [
 export function HeroVisual() {
   return (
     <aside className="hero-aside" aria-label="Research focus areas">
+      <ProfilePhoto />
+
       <div className="hero-mesh" aria-hidden="true">
         <svg viewBox="0 0 360 360" className="hero-mesh__svg">
           <defs>
