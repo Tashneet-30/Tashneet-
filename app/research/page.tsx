@@ -11,7 +11,6 @@ export default function ResearchPage() {
   return (
     <div className="container page-wide">
       <header className="page-header">
-        <p className="page-eyebrow">SPIN Lab · Laurier</p>
         <h1 className="page-title">Research</h1>
         <p className="page-subtitle">
           Peer-reviewed publications and ongoing thesis work.{" "}
