@@ -6,6 +6,9 @@ const repoName = "Tashneet-";
 const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? `/${repoName}` : "",
+  },
   ...(isGithubPages
     ? {
         basePath: `/${repoName}`,

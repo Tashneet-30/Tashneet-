@@ -1,4 +1,5 @@
 import { BentoResearchCard } from "@/components/bento";
+import { MobilityPageHeader } from "@/components/mobility-scene";
 import { publications, site } from "@/lib/content";
 
 export const metadata = {
@@ -10,14 +11,19 @@ export const metadata = {
 export default function ResearchPage() {
   return (
     <div className="container page-wide">
-      <header className="page-header">
-        <h1 className="page-title">Research</h1>
-        <p className="page-subtitle">
-          Peer-reviewed publications and ongoing thesis work.{" "}
-          <a href={site.links.scholar} target="_blank" rel="noopener noreferrer">
-            Google Scholar ↗
-          </a>
-        </p>
+      <header className="page-header page-header--mobility">
+        <MobilityPageHeader />
+        <div className="page-header__content">
+          <p className="page-eyebrow">AI · Mobility · Urban Systems</p>
+          <h1 className="page-title">Research</h1>
+          <p className="page-subtitle">
+            Peer-reviewed publications and ongoing thesis work in intelligent
+            transportation.{" "}
+            <a href={site.links.scholar} target="_blank" rel="noopener noreferrer">
+              Google Scholar ↗
+            </a>
+          </p>
+        </div>
       </header>
 
       <div className="bento-grid bento-grid--research">
