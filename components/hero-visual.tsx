@@ -29,12 +29,12 @@ export function HeroVisual() {
         <svg viewBox="0 0 360 360" className="hero-mesh__svg">
           <defs>
             <linearGradient id="flow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#0d9488" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#0284c7" stopOpacity="0.3" />
+              <stop offset="0%" stopColor="#6366f1" stopOpacity="0.55" />
+              <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0.35" />
             </linearGradient>
           </defs>
-          <circle cx="180" cy="180" r="120" fill="none" stroke="url(#flow)" strokeWidth="1" opacity="0.4" />
-          <circle cx="180" cy="180" r="80" fill="none" stroke="#0d9488" strokeWidth="0.5" opacity="0.25" />
+          <circle cx="180" cy="180" r="120" fill="none" stroke="url(#flow)" strokeWidth="1" opacity="0.45" />
+          <circle cx="180" cy="180" r="80" fill="none" stroke="#8b5cf6" strokeWidth="0.5" opacity="0.3" />
           <path
             d="M 60 220 C 120 120, 200 280, 300 140"
             fill="none"
@@ -42,9 +42,9 @@ export function HeroVisual() {
             strokeWidth="2"
             strokeLinecap="round"
           />
-          <circle cx="60" cy="220" r="4" fill="#0d9488" />
-          <circle cx="180" cy="200" r="5" fill="#0284c7" />
-          <circle cx="300" cy="140" r="4" fill="#0d9488" />
+          <circle cx="60" cy="220" r="4" fill="#6366f1" />
+          <circle cx="180" cy="200" r="5" fill="#0ea5e9" />
+          <circle cx="300" cy="140" r="4" fill="#8b5cf6" />
         </svg>
       </div>
 
