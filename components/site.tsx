@@ -122,6 +122,16 @@ export function ConnectPanel() {
         creative experiments, or conversations that bring technology closer to
         everyday life, I&apos;d love to connect.
       </p>
+      <div className="connect-panel__footer">
+        <p>
+          Explore my <Link href="/research">research</Link>,{" "}
+          <Link href="/projects">projects</Link>, and ideas — or just say hello.
+        </p>
+        <p className="connect-email">
+          My inbox is always open:{" "}
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+      </div>
     </section>
   );
 }
