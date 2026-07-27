@@ -195,11 +195,13 @@ a:hover {
 
 /* Hero */
 .hero-block {
-  padding: 2rem 0 2.25rem;
-  border-bottom: none;
-  background: transparent;
+  padding: 2.75rem 0 2.25rem;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, transparent 100%),
+    radial-gradient(ellipse 70% 80% at 100% 0%, rgba(16, 185, 129, 0.08), transparent 60%);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .hero-block--mobility::after {
@@ -212,9 +214,9 @@ a:hover {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1fr minmax(260px, 32%);
-  gap: 2rem;
-  align-items: stretch;
+  grid-template-columns: 1fr 300px;
+  gap: 2.5rem;
+  align-items: start;
 }
 
 .hero-content {
@@ -226,16 +228,10 @@ a:hover {
   margin: 0;
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 
 .profile-photo__frame {
   position: relative;
-  flex: 1;
-  display: flex;
-  min-height: 0;
   padding: 3px;
   border-radius: 16px;
   background: var(--gradient-brand);
@@ -245,10 +241,7 @@ a:hover {
 .profile-photo__img {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 320px;
-  object-fit: cover;
-  object-position: center 22%;
+  height: auto;
   border-radius: 13px;
   background: var(--bg-soft);
 }
@@ -324,7 +317,7 @@ a:hover {
   line-height: 1.7;
   color: var(--text);
   margin: 0;
-  max-width: none;
+  max-width: 36rem;
   font-weight: 400;
 }
 
@@ -333,7 +326,7 @@ a:hover {
   color: var(--text-muted);
   font-size: 0.98rem;
   line-height: 1.7;
-  max-width: none;
+  max-width: 36rem;
 }
 
 .hook-prose p:not(.page-intro) {
@@ -343,15 +336,12 @@ a:hover {
 /* Hero aside — profile only */
 .hero-aside {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 
 .focus-row {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
 }
 
 .focus-stack {
@@ -470,8 +460,7 @@ a:hover {
   background: var(--gradient-brand);
 }
 
-.section-card > h2,
-.section-card .page-title {
+.section-card > h2 {
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 600;
@@ -479,28 +468,6 @@ a:hover {
   letter-spacing: 0.1em;
   color: var(--accent);
   margin: 0 0 1.25rem;
-}
-
-.about-card {
-  margin-top: 0.5rem;
-}
-
-.about-card .page-title {
-  font-size: clamp(2rem, 4.5vw, 2.65rem);
-  text-transform: none;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.85rem;
-}
-
-.about-card .focus-row {
-  margin-top: 1.75rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--border);
 }
 
 /* Work cards */
@@ -992,22 +959,7 @@ a:hover {
 
   .hero-aside {
     margin-top: 1.5rem;
-    max-width: 320px;
-    height: auto;
-  }
-
-  .profile-photo {
-    height: auto;
-  }
-
-  .profile-photo__frame {
-    flex: none;
-  }
-
-  .profile-photo__img {
-    height: auto;
-    aspect-ratio: 4 / 5;
-    min-height: 0;
+    max-width: 300px;
   }
 
   .focus-stack {
