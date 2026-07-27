@@ -4,6 +4,17 @@ Personal portfolio website showcasing work in **AI**, **transportation**, and **
 
 **Live site:** [https://tashneet-30.github.io/Tashneet-/](https://tashneet-30.github.io/Tashneet-/)
 
+### One-time hosting setup (required)
+
+GitHub Pages must be enabled once in your repo:
+
+1. Go to [github.com/Tashneet-30/Tashneet-/settings/pages](https://github.com/Tashneet-30/Tashneet-/settings/pages)
+2. Under **Build and deployment → Source**, choose **Deploy from a branch**
+3. Set **Branch** to `gh-pages` and folder to `/ (root)`
+4. Click **Save**
+
+The site will be live at the URL above within 1–2 minutes. Future pushes to `main` auto-deploy via GitHub Actions.
+
 ## Stack
 
 - [Next.js](https://nextjs.org/) (App Router, static export)
