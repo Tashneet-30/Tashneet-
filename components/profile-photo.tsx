@@ -9,8 +9,6 @@ export function ProfilePhoto() {
         <img
           src={assetPath(site.photo)}
           alt={`Portrait of ${site.name}`}
-          width={300}
-          height={360}
           className="profile-photo__img"
           loading="eager"
           decoding="async"
