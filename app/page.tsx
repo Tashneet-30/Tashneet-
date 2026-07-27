@@ -86,17 +86,6 @@ export default function AboutPage() {
         <RecognitionList />
         <ContentStrip />
         <ConnectPanel />
-
-        <div className="connect-footer">
-          <p>
-            Explore my <a href="/research">research</a>,{" "}
-            <a href="/projects">projects</a>, and ideas — or just say hello.
-          </p>
-          <p className="connect-email">
-            My inbox is always open:{" "}
-            <a href={`mailto:${site.email}`}>{site.email}</a>
-          </p>
-        </div>
       </div>
     </div>
   );

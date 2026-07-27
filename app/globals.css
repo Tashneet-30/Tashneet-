@@ -690,19 +690,27 @@ a:hover {
   margin: 0 0 0.85rem;
   color: var(--text-muted);
   font-size: 0.96rem;
-  max-width: 38rem;
+  max-width: none;
   line-height: 1.7;
 }
 
-.connect-footer {
-  padding: 1.75rem 0 0;
+.connect-panel__footer {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--border);
 }
 
-.connect-footer p {
+.connect-panel__footer p {
   margin: 0 0 0.35rem;
-  color: var(--text-muted);
-  font-size: 0.95rem;
+}
+
+.connect-panel__footer a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.connect-panel__footer a:hover {
+  text-decoration: underline;
 }
 
 .connect-email a {
