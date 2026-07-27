@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ProfilePhoto } from "./profile-photo";
-import { MobilityHeroScene } from "./mobility-scene";
 import { site } from "@/lib/content";
 
 const pillars = [
@@ -27,7 +26,6 @@ const pillars = [
 export function HeroVisual() {
   return (
     <aside className="hero-aside" aria-label="Research focus areas">
-      <MobilityHeroScene />
       <ProfilePhoto />
 
       <div className="focus-stack">
