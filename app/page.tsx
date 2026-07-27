@@ -14,52 +14,43 @@ export default function AboutPage() {
       <section className="hero-block">
         <div className="hero-layout container-wide">
           <div className="hero-content">
-            <h1 className="page-title">About</h1>
-
-            <div className="hook-prose story-prose">
-              <p className="page-intro">
-                Hi, I&apos;m Tashneet — a Master of Applied Computing (Thesis)
-                student at{" "}
-                <a
-                  href={site.links.laurier}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Wilfrid Laurier University
-                </a>
-                , where I research how artificial intelligence and data-driven
-                technologies can help build smarter, more sustainable cities.
-                Before this, I earned my bachelor&apos;s in Computer Science
-                &amp; Engineering from{" "}
-                <a
-                  href={site.links.gndec}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Guru Nanak Dev Engineering College (GNDEC)
-                </a>
-                , India — GPA 9.05/10 — where I first learned to connect code to
-                problems that reach beyond the screen.
-              </p>
-              <p>
-                I have always been fascinated by the invisible systems that shape
-                everyday life — the roads we travel, the networks that connect us,
-                and the infrastructure that supports our communities.
-              </p>
-              <p>
-                After moving to Canada for graduate studies, a delayed bus on a
-                winter morning in Waterloo became a small but meaningful reminder
-                of how deeply transportation systems influence our daily
-                experiences. It sparked a bigger question: how can we use
-                technology not only to react to urban challenges, but to predict
-                and prepare for them?
-              </p>
-              <p>
-                Today, my work focuses on answering that question through
-                artificial intelligence, data-driven modelling, and computational
-                approaches — helping create cities that are more intelligent,
-                efficient, and sustainable.
-              </p>
+            <p className="hero-eyebrow">
+              <span className="status-dot" aria-hidden="true" />
+              Graduate Scholar · Waterloo, Canada
+            </p>
+            <h1 className="hero-title">
+              Building AI for cities that{" "}
+              <span className="hero-title__accent">move smarter.</span>
+            </h1>
+            <p className="hero-lead">
+              I&apos;m Tashneet Kaur, a Graduate Scholar at{" "}
+              <a href={site.links.laurier} target="_blank" rel="noopener noreferrer">
+                Wilfrid Laurier University
+              </a>
+              , working across EV infrastructure, transit forecasting, digital
+              twins, and intelligent urban mobility.
+            </p>
+            <div className="hero-actions">
+              <a href="/projects" className="button button--primary">
+                Explore my work <span aria-hidden="true">↗</span>
+              </a>
+              <a href={site.links.scholar} target="_blank" rel="noopener noreferrer" className="button button--ghost">
+                Google Scholar
+              </a>
+            </div>
+            <div className="hero-trust" aria-label="Selected credentials">
+              <div>
+                <strong>5</strong>
+                <span>Research papers</span>
+              </div>
+              <div>
+                <strong>Q1</strong>
+                <span>Elsevier publication</span>
+              </div>
+              <div>
+                <strong>OCI</strong>
+                <span>Industry-backed research</span>
+              </div>
             </div>
           </div>
           <HeroVisual />
@@ -67,13 +58,27 @@ export default function AboutPage() {
       </section>
 
       <div className="container">
+        <section className="story-intro">
+          <p className="section-kicker">Research with real-world direction</p>
+          <h2>
+            From predicting passenger demand to planning where cities need EV
+            chargers next.
+          </h2>
+          <p>
+            My work turns complex mobility data into practical systems for
+            more efficient, resilient, and sustainable communities.
+          </p>
+        </section>
+
         <section className="work-section work-section--current">
-          <h2>Currently working on</h2>
+          <p className="section-kicker">Now</p>
+          <h2>Currently building, researching &amp; contributing</h2>
           <CurrentWork />
         </section>
 
         <section className="work-section">
-          <h2>What I&apos;ve worked on</h2>
+          <p className="section-kicker">Selected impact</p>
+          <h2>Work that connects AI to the physical world</h2>
           <PastWork />
         </section>
 

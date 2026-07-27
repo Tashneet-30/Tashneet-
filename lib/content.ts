@@ -1,11 +1,11 @@
 export const site = {
   name: "Tashneet Kaur",
-  title: "Tashneet Kaur",
-  headline: "Building intelligent systems for smarter, more sustainable cities.",
-  tagline: "AI Researcher • Intelligent Transportation Systems • Smart Cities",
+  title: "Tashneet Kaur — AI & Intelligent Mobility Researcher",
+  headline: "Building AI for cities that move smarter.",
+  tagline: "Graduate Scholar • AI • Intelligent Mobility • Smart Cities",
   description:
-    "AI researcher focused on intelligent transportation systems, smart cities, and data-driven urban mobility.",
-  url: "https://tashneet-30.github.io/Tashneet-",
+    "Graduate Scholar at Wilfrid Laurier University working on EV infrastructure, transit forecasting, digital twins, and intelligent urban mobility.",
+  url: "https://tashneet.vercel.app",
   email: "kaur6910@mylaurier.ca",
   location: "Waterloo, Ontario",
   links: {

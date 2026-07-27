@@ -1,70 +1,56 @@
-import Link from "next/link";
-import { site } from "@/lib/content";
-
-const pillars = [
-  {
-    label: "01",
-    title: "EV Infrastructure",
-    text: "Forecasting & optimization for multi-unit residential charging — production algorithms with Elocity.",
-    href: "/projects",
-  },
-  {
-    label: "02",
-    title: "Transit Intelligence",
-    text: "Digital twin demand forecasting for public transit — published in Future Generation Computer Systems.",
-    href: "/research",
-  },
-  {
-    label: "03",
-    title: "AI & Urban Systems",
-    text: "Data-driven models that help cities plan smarter, not just react faster.",
-    href: "/research",
-  },
-];
-
 export function HeroVisual() {
   return (
-    <aside className="hero-aside" aria-label="Research focus areas">
-      <div className="hero-mesh" aria-hidden="true">
-        <svg viewBox="0 0 360 360" className="hero-mesh__svg">
+    <aside className="hero-visual" aria-label="AI and urban mobility illustration">
+      <div className="visual-glow" aria-hidden="true" />
+      <div className="visual-orbit visual-orbit--outer" aria-hidden="true" />
+      <div className="visual-orbit visual-orbit--inner" aria-hidden="true" />
+
+      <div className="visual-core" aria-hidden="true">
+        <svg viewBox="0 0 120 120" role="img">
           <defs>
-            <linearGradient id="flow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#0d9488" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="#0284c7" stopOpacity="0.3" />
+            <linearGradient id="coreFace" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#7dd3fc" />
+              <stop offset="55%" stopColor="#2563eb" />
+              <stop offset="100%" stopColor="#312e81" />
             </linearGradient>
           </defs>
-          <circle cx="180" cy="180" r="120" fill="none" stroke="url(#flow)" strokeWidth="1" opacity="0.4" />
-          <circle cx="180" cy="180" r="80" fill="none" stroke="#0d9488" strokeWidth="0.5" opacity="0.25" />
-          <path
-            d="M 60 220 C 120 120, 200 280, 300 140"
-            fill="none"
-            stroke="url(#flow)"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <circle cx="60" cy="220" r="4" fill="#0d9488" />
-          <circle cx="180" cy="200" r="5" fill="#0284c7" />
-          <circle cx="300" cy="140" r="4" fill="#0d9488" />
+          <path d="M60 10 103 35v50L60 110 17 85V35Z" fill="url(#coreFace)" />
+          <path d="M17 35 60 60l43-25M60 60v50" fill="none" stroke="#fff" strokeOpacity=".38" strokeWidth="2" />
+          <circle cx="60" cy="58" r="15" fill="#fff" fillOpacity=".16" stroke="#fff" strokeOpacity=".65" />
+          <path d="M52 59h16M60 51v16" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
         </svg>
+        <span>AI</span>
       </div>
 
-      <div className="focus-stack">
-        {pillars.map((item) => (
-          <Link key={item.label} href={item.href} className="focus-card">
-            <span className="focus-card__label">{item.label}</span>
-            <h3 className="focus-card__title">{item.title}</h3>
-            <p className="focus-card__text">{item.text}</p>
-          </Link>
-        ))}
+      <div className="float-card float-card--ev">
+        <span className="icon-cube icon-cube--green" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <path d="M18 3 9 17h7l-2 12 9-15h-7l2-11Z" fill="currentColor" />
+          </svg>
+        </span>
+        <span><strong>EV systems</strong>Infrastructure planning</span>
+      </div>
+      <div className="float-card float-card--transit">
+        <span className="icon-cube icon-cube--cyan" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="7" y="5" width="18" height="20" rx="5" fill="none" stroke="currentColor" strokeWidth="2.5" />
+            <path d="M10 10h12v7H10zM11 25l-2 4m12-4 2 4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+            <circle cx="12" cy="21" r="1.5" fill="currentColor" /><circle cx="20" cy="21" r="1.5" fill="currentColor" />
+          </svg>
+        </span>
+        <span><strong>Transit AI</strong>Demand forecasting</span>
+      </div>
+      <div className="float-card float-card--twin">
+        <span className="icon-cube icon-cube--violet" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <path d="m16 4 11 6-11 6L5 10l11-6Zm-11 12 11 6 11-6M5 22l11 6 11-6" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" />
+          </svg>
+        </span>
+        <span><strong>Digital twins</strong>Urban intelligence</span>
       </div>
 
-      <div className="hero-cta-row">
-        <Link href="/projects" className="hero-cta">Projects</Link>
-        <Link href="/research" className="hero-cta">Research</Link>
-        <a href={`mailto:${site.email}`} className="hero-cta hero-cta--primary">
-          Say hello
-        </a>
-      </div>
+      <div className="signal-pill signal-pill--one" aria-hidden="true">01</div>
+      <div className="signal-pill signal-pill--two" aria-hidden="true">101</div>
     </aside>
   );
 }

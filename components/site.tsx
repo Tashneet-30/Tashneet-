@@ -7,7 +7,11 @@ export function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="site-logo">
-          {site.name}
+          <span className="site-logo__mark" aria-hidden="true">TK</span>
+          <span>
+            {site.name}
+            <small>AI · Mobility · Cities</small>
+          </span>
         </Link>
         <nav className="site-nav" aria-label="Main navigation">
           {nav.map((item) => (
@@ -15,6 +19,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <a className="nav-contact" href={`mailto:${site.email}`}>Let&apos;s connect</a>
         </nav>
       </div>
     </header>
