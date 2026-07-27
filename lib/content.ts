@@ -1,22 +1,23 @@
 export const site = {
   name: "Tashneet Kaur",
   title: "Tashneet Kaur",
-  tagline: "AI · Mobility · Systems that scale",
+  headline: "Building intelligent systems for smarter, more sustainable cities.",
+  tagline: "AI · Mobility · Data-Driven Infrastructure",
   description:
-    "Graduate researcher building algorithms for EV infrastructure, transit forecasting, and sustainable urban mobility.",
+    "Graduate researcher building AI-driven forecasting and optimization for EV infrastructure, transit systems, and sustainable urban mobility.",
   url: "https://tashneet-30.github.io/Tashneet-",
   email: "kaur6910@mylaurier.ca",
   location: "Waterloo, Ontario",
-  lab: "SPIN Lab, Wilfrid Laurier University",
   links: {
     github: "https://github.com/Tashneet-30",
     linkedin: "https://www.linkedin.com/in/tashneetkaur343/",
     scholar: "https://scholar.google.com/citations?hl=en&user=53ldLF4AAAAJ",
-    instagram: "https://www.instagram.com/tashneet_30/",
-    youtube: "https://www.youtube.com/@tashneetkaur",
-    leetcode: "https://leetcode.com/u/Tashneetkaur/",
-    topmate: "https://topmate.io/tashneet_kaur",
-    linktree: "https://linktr.ee/tashneetkaur",
+    instagram: "https://www.instagram.com/tshntkaur/",
+    youtube: "https://www.youtube.com/channel/UCznokDABEgccqoKNjWL-aDw",
+    elocity: "https://elocitytech.com/",
+    oci: "https://www.oc-innovation.ca/",
+    laurier: "https://www.wlu.ca/",
+    spinLab: "https://www.linkedin.com/in/sukhjitsehra/",
   },
 };
 
@@ -26,56 +27,101 @@ export const nav = [
   { href: "/research", label: "Research" },
 ];
 
+export type ContentPart =
+  | { type: "text"; value: string }
+  | { type: "link"; value: string; href: string };
+
 export type WorkItem = {
-  text: string;
-  link?: { href: string; label: string };
-  suffix?: string;
+  title: string;
+  parts: ContentPart[];
 };
 
 export const currentWork: WorkItem[] = [
   {
-    text: "Thesis research with ",
-    link: { href: "https://elocitytech.com/", label: "Elocity Technologies" },
-    suffix:
-      " on HIEV-AI — designing forecasting and optimization algorithms for EV charging in multi-unit residential buildings, built for production deployment.",
+    title: "AI-Driven Solutions for Sustainable Urban Mobility",
+    parts: [
+      { type: "text", value: "Pursuing my Master's thesis research in the " },
+      { type: "link", value: "SPIN Lab", href: site.links.spinLab },
+      { type: "text", value: " at " },
+      { type: "link", value: "Wilfrid Laurier University", href: site.links.laurier },
+      { type: "text", value: " in collaboration with " },
+      { type: "link", value: "Elocity Technologies", href: site.links.elocity },
+      { type: "text", value: " through an " },
+      { type: "link", value: "OCI-funded project", href: site.links.oci },
+      {
+        type: "text",
+        value:
+          ". I am developing AI-based forecasting and optimization models for EV adoption and charging infrastructure planning in multi-unit residential buildings, creating data-driven decision-support tools to help cities and communities prepare for the transition to electric mobility.",
+      },
+    ],
   },
   {
-    text: "AI-based EV adoption forecasting and charging infrastructure planning as part of my MAC thesis in the SPIN Lab.",
+    title: "Teaching & Mentorship at Laurier",
+    parts: [
+      { type: "text", value: "Serving as a Graduate Teaching Assistant at " },
+      { type: "link", value: "Wilfrid Laurier University", href: site.links.laurier },
+      {
+        type: "text",
+        value:
+          " for courses including Databases and Operating Systems, supporting students through technical instruction, programming guidance, and hands-on problem-solving.",
+      },
+    ],
   },
   {
-    text: "Graduate Teaching Assistant at Laurier (CP363 & CP373) — databases, programming, and student mentorship.",
-  },
-  {
-    text: "Graduate International Student Leader with Laurier International — supporting international students on campus.",
+    title: "Graduate International Student Leadership",
+    parts: [
+      { type: "text", value: "Working with Laurier International as a Graduate International Student Leader, supporting international students through mentorship, community-building initiatives, and creating a more connected graduate experience." },
+    ],
   },
 ];
 
 export const pastWork: WorkItem[] = [
   {
-    text: "Digital twin framework for public transit demand forecasting in New York City — published in ",
-    link: {
-      href: "https://doi.org/10.1016/j.future.2026.108583",
-      label: "Future Generation Computer Systems",
-    },
-    suffix: " (Q1).",
+    title: "Digital Twin Framework for Urban Mobility",
+    parts: [
+      {
+        type: "text",
+        value:
+          "Developed a digital twin-based multi-horizon passenger demand forecasting framework for public transit systems, combining data-driven modelling and predictive analytics to support smarter transportation planning in New York City. Published in ",
+      },
+      {
+        type: "link",
+        value: "Future Generation Computer Systems (Elsevier, Q1)",
+        href: "https://doi.org/10.1016/j.future.2026.108583",
+      },
+      { type: "text", value: "." },
+    ],
   },
   {
-    text: "WayWise — intelligent route optimization for emergency vehicles. ",
-    link: { href: "https://github.com/Tashneet-30/WayWise", label: "GitHub" },
-    suffix:
-      ". 3rd place, Innovative Poster Presentation — Traffic & Transportation, CSIR-CRRI Young Researchers' Conclave, New Delhi.",
+    title: "WayWise: AI-Powered Emergency Vehicle Routing for Smart Cities",
+    parts: [
+      {
+        type: "text",
+        value:
+          "Built an intelligent routing system that integrates AI, traffic analysis, and optimization algorithms to improve emergency vehicle response times. Awarded 3rd Place at the CSIR-CRRI Young Researchers' Conclave (Traffic & Transportation), New Delhi. ",
+      },
+      { type: "link", value: "View on GitHub", href: "https://github.com/Tashneet-30/WayWise" },
+    ],
   },
   {
-    text: "Open-source developer with the ",
-    link: { href: "https://www.khalisfoundation.org/", label: "Khalis Foundation" },
-    suffix:
-      " — contributed AI features to the Hazoor app with an international development team.",
+    title: "Cybersecurity Operations & Technology Delivery at SafeAeon",
+    parts: [
+      {
+        type: "text",
+        value:
+          "Started as a SOC Analyst, monitoring security incidents, analyzing threats, and supporting incident response using SIEM and EDR platforms. Later transitioned into a Service Delivery Manager role, leading client communication, operational coordination, and technical service delivery.",
+      },
+    ],
   },
   {
-    text: "Service Delivery Manager, then SOC Analyst at SafeAeon Inc. — client operations, incident response, and security monitoring.",
-  },
-  {
-    text: "Quad-RRT path planning with OpenMP (CP631) — accepted at CCIDSA 2026, Lakehead University.",
+    title: "Parallel Motion Planning with OpenMP",
+    parts: [
+      {
+        type: "text",
+        value:
+          "Researched parallel optimization techniques for Quad-RRT path planning, improving computational efficiency through OpenMP-based parallelization. Accepted at CCIDSA 2026, Lakehead University.",
+      },
+    ],
   },
 ];
 
@@ -121,15 +167,15 @@ export const projects: Project[] = [
     slug: "hiev-ai",
     title: "HIEV-AI — EV Infrastructure Analytics",
     description:
-      "OCI-funded Laurier × Elocity collaboration. I build the core algorithms — demand forecasting, capacity modeling, ROI estimation — headed for production on a platform helping MURB owners plan EV charging intelligently.",
-    tags: ["Algorithms", "EV Infrastructure", "MURBs", "Python"],
-    awards: ["OCI C2C · In production"],
+      "OCI-funded Laurier × Elocity collaboration. Forecasting and optimization algorithms for EV adoption and charging infrastructure in multi-unit residential buildings — built for production deployment.",
+    tags: ["AI Forecasting", "EV Infrastructure", "MURBs", "Python"],
+    awards: ["OCI C2C · Elocity Partnership"],
     links: [
       {
         href: "https://elocitytech.com/elocity-laurier-hiev-ai-ev-charging/",
         label: "Press release",
       },
-      { href: "https://elocitytech.com/", label: "Elocity" },
+      { href: site.links.elocity, label: "Elocity" },
     ],
   },
   {
@@ -137,50 +183,34 @@ export const projects: Project[] = [
     title: "Digital Twin Transit Forecasting",
     description:
       "Multi-horizon passenger demand forecasting for public transit using a digital twin of NYC's network — first-author Q1 publication.",
-    tags: ["Digital Twins", "Deep Learning", "Transit"],
+    tags: ["Digital Twins", "Deep Learning", "Transit", "NYC"],
     awards: ["FGCS · Published 2026"],
     links: [
       { href: "https://doi.org/10.1016/j.future.2026.108583", label: "DOI" },
-      {
-        href: "https://scholar.google.com/citations?hl=en&user=53ldLF4AAAAJ",
-        label: "Scholar",
-      },
+      { href: site.links.scholar, label: "Scholar" },
     ],
   },
   {
     slug: "waywise",
-    title: "WayWise — Emergency Routing",
+    title: "WayWise — Emergency Vehicle Routing",
     description:
-      "AI-driven route optimization for emergency vehicles in smart cities. Recognized nationally at CSIR-CRRI.",
-    tags: ["Routing", "AI", "Smart Cities"],
+      "AI-driven route optimization integrating traffic analysis to improve emergency response times in smart cities.",
+    tags: ["Routing", "AI", "Smart Cities", "Python"],
     awards: ["CSIR-CRRI 3rd · Traffic & Transportation"],
     links: [
       { href: "https://github.com/Tashneet-30/WayWise", label: "GitHub" },
-      {
-        href: "https://scholar.google.com/citations?hl=en&user=53ldLF4AAAAJ",
-        label: "Scholar",
-      },
+      { href: site.links.scholar, label: "Scholar" },
     ],
   },
   {
     slug: "quad-rrt",
     title: "Quad-RRT + OpenMP",
     description:
-      "Parallelized inter-tree matching for autonomous navigation — high-performance path planning from CP631.",
-    tags: ["OpenMP", "C", "Path Planning"],
+      "Parallelized inter-tree matching for autonomous navigation — high-performance path planning research from CP631.",
+    tags: ["OpenMP", "C", "Path Planning", "Parallel Computing"],
     awards: ["CCIDSA 2026"],
     links: [
       { href: "https://github.com/Tashneet-30/cp631project", label: "GitHub" },
-    ],
-  },
-  {
-    slug: "hazoor",
-    title: "Hazoor — Khalis Foundation",
-    description:
-      "Open-source AI features for the Hazoor app — Gurbani-grounded Q&A, built with FastAPI, React, and PostgreSQL alongside a global volunteer team.",
-    tags: ["Open Source", "FastAPI", "Generative AI"],
-    links: [
-      { href: "https://www.khalisfoundation.org/", label: "Khalis Foundation" },
     ],
   },
 ];
@@ -205,10 +235,7 @@ export const publications: Publication[] = [
       "Forecasting transit passenger demand across multiple planning horizons for NYC.",
     links: [
       { href: "https://doi.org/10.1016/j.future.2026.108583", label: "DOI" },
-      {
-        href: "https://scholar.google.com/citations?hl=en&user=53ldLF4AAAAJ",
-        label: "Scholar",
-      },
+      { href: site.links.scholar, label: "Scholar" },
     ],
   },
   {
@@ -218,43 +245,28 @@ export const publications: Publication[] = [
     year: "2026",
     status: "Accepted",
     description: "Parallel computing for autonomous navigation path planning.",
-    links: [{ href: "https://github.com/Tashneet-30/cp631project", label: "GitHub" }],
+    links: [{ href: site.links.scholar, label: "Scholar" }],
   },
   {
     title:
       "From Haze and Smoke to Clarity: An Integration of Deep Learning and Atmospheric Models for Enhanced Visual Clarity",
     venue: "CICBA, NIT Patna",
     year: "2024",
-    links: [
-      {
-        href: "https://scholar.google.com/citations?hl=en&user=53ldLF4AAAAJ",
-        label: "Scholar",
-      },
-    ],
+    links: [{ href: site.links.scholar, label: "Scholar" }],
   },
   {
     title:
       "GPU-Accelerated Monte Carlo Simulations for Real-time Financial Risk Analysis",
     venue: "ICDMIS",
     year: "2025",
-    links: [
-      {
-        href: "https://scholar.google.com/citations?hl=en&user=53ldLF4AAAAJ",
-        label: "Scholar",
-      },
-    ],
+    links: [{ href: site.links.scholar, label: "Scholar" }],
   },
   {
     title:
       "Deep Scene Fusion: A Hybrid Deep Learning-CNN Approach for Scene Recognition",
     venue: "ICDAM",
     year: "2024",
-    links: [
-      {
-        href: "https://scholar.google.com/citations?hl=en&user=53ldLF4AAAAJ",
-        label: "Scholar",
-      },
-    ],
+    links: [{ href: site.links.scholar, label: "Scholar" }],
   },
 ];
 
@@ -263,5 +275,5 @@ export const socialLinks = [
   { href: site.links.youtube, label: "YouTube" },
   { href: site.links.linkedin, label: "LinkedIn" },
   { href: site.links.github, label: "GitHub" },
-  { href: site.links.scholar, label: "Google Scholar" },
+  { href: site.links.scholar, label: "Scholar" },
 ];

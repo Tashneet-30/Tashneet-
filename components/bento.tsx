@@ -97,22 +97,3 @@ export function BentoResearchCard({
   );
 }
 
-export function ConnectPanel() {
-  return (
-    <section className="connect-panel">
-      <h2>Connect with me</h2>
-      <p>
-        When I&apos;m not thinking about transit networks or EV adoption curves,
-        you&apos;ll probably find me on a badminton court, exploring a new city,
-        curled up with a book, or painting something that has nothing to do with
-        code. I also love making tech feel human — through videos, posts, and
-        conversations that demystify what researchers actually do.
-      </p>
-      <p>
-        I&apos;m always glad to connect with people who care about smarter cities,
-        thoughtful AI, open source, or just fun experiments at the intersection
-        of technology and everyday life.
-      </p>
-    </section>
-  );
-}

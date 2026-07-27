@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Sans } from "next/font/google";
 import { Header, Footer } from "@/components/site";
+import { EvCursor } from "@/components/ev-cursor";
 import { site } from "@/lib/content";
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
+        <EvCursor />
         <Header />
         <main className="site-main">{children}</main>
         <Footer />
