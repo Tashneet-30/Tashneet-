@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Sans } from "next/font/google";
-import { Footer } from "@/components/site";
+import { Header, Footer } from "@/components/site";
 import { site } from "@/lib/content";
 import "./globals.css";
 
@@ -35,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
+        <Header />
         <main className="site-main">{children}</main>
         <Footer />
       </body>
