@@ -116,7 +116,7 @@ export const pastWork: WorkItem[] = [
       {
         type: "text",
         value:
-          "Built an intelligent routing system that integrates AI, traffic analysis, and optimization algorithms to improve emergency vehicle response times. Awarded 3rd Place at the CSIR-CRRI Young Researchers' Conclave (Traffic & Transportation), New Delhi. ",
+          "Built an intelligent routing system that integrates AI, traffic analysis, and optimization algorithms to improve emergency vehicle response times. Won 3rd place in the CSIR-CRRI poster presentation (Traffic & Transportation) at the Young Researchers' Conclave 2023, New Delhi. ",
       },
       { type: "link", value: "View on GitHub", href: "https://github.com/Tashneet-30/WayWise" },
     ],
@@ -169,7 +169,7 @@ export const recognition: Recognition[] = [
   {
     title: "CSIR-CRRI Young Researchers' Conclave",
     detail:
-      "3rd place nationally — Innovative Poster Presentation, Traffic & Transportation category, New Delhi.",
+      "3rd place — Poster Presentation, Traffic & Transportation category, Young Researchers' Conclave 2023, New Delhi.",
   },
 ];
 
@@ -214,9 +214,9 @@ export const projects: Project[] = [
     slug: "waywise",
     title: "WayWise — Emergency Vehicle Routing",
     description:
-      "AI-driven route optimization integrating traffic analysis to improve emergency response times in smart cities.",
+      "AI-driven route optimization integrating traffic analysis to improve emergency response times in smart cities. Won 3rd place in the CSIR-CRRI poster presentation (Traffic & Transportation) at the Young Researchers' Conclave 2023, New Delhi.",
     tags: ["Routing", "AI", "Smart Cities", "Python"],
-    awards: ["CSIR-CRRI 3rd · Traffic & Transportation"],
+    awards: ["CSIR-CRRI 3rd · Poster · YRC 2023, New Delhi"],
     links: [
       { href: "https://github.com/Tashneet-30/WayWise", label: "GitHub" },
       { href: site.links.scholar, label: "Scholar" },
