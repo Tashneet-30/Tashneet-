@@ -8,9 +8,8 @@ export function Header() {
       <div className="header-inner">
         <div className="brand">
           <Link href="/" className="site-logo">
-            Tashneet
+            {site.tagline}
           </Link>
-          <span className="site-tagline">{site.tagline}</span>
         </div>
         <nav className="site-nav" aria-label="Main navigation">
           {nav.map((item) => (

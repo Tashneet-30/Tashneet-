@@ -89,17 +89,20 @@ a:hover {
 }
 
 .site-logo {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--text-muted);
   text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.site-logo:hover {
+  color: var(--accent);
 }
 
 .site-tagline {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  letter-spacing: 0.03em;
+  display: none;
 }
 
 .site-nav {
