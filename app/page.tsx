@@ -5,7 +5,7 @@ import {
   PastWork,
   RecognitionList,
 } from "@/components/site";
-import { HeroDoodles } from "@/components/hero-doodles";
+import { HeroVisual } from "@/components/hero-visual";
 import { site } from "@/lib/content";
 
 export default function AboutPage() {
@@ -41,7 +41,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <HeroDoodles />
+          <HeroVisual />
         </div>
       </section>
 

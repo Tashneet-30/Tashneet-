@@ -80,11 +80,16 @@ export function RecognitionList() {
 export function ContentStrip() {
   return (
     <section className="content-strip">
-      <div className="content-strip__label">Content creation</div>
-      <h2>Tech, travel &amp; ideas beyond the lab</h2>
+      <h2>Research, technology, and the stories behind the code</h2>
       <p>
-        I share what I&apos;m learning on Instagram and YouTube — from student
-        life in Canada to breaking down complex tech in human terms.
+        I create content around AI, emerging technologies, student life, and the
+        experiences that come with building and learning in a constantly evolving
+        world.
+      </p>
+      <p>
+        From explaining technical concepts to sharing everyday moments as a
+        graduate researcher in Canada, I enjoy turning ideas into stories that
+        are easier to understand and connect with.
       </p>
       <div className="content-strip__links">
         <a href={site.links.instagram} target="_blank" rel="noopener noreferrer" className="social-chip">
@@ -92,12 +97,6 @@ export function ContentStrip() {
         </a>
         <a href={site.links.youtube} target="_blank" rel="noopener noreferrer" className="social-chip">
           YouTube
-        </a>
-        <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="social-chip social-chip--outline">
-          LinkedIn
-        </a>
-        <a href={site.links.github} target="_blank" rel="noopener noreferrer" className="social-chip social-chip--outline">
-          GitHub
         </a>
       </div>
     </section>

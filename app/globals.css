@@ -41,11 +41,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body.ev-cursor-active,
-body.ev-cursor-active * {
-  cursor: none !important;
-}
-
 a {
   color: var(--accent);
   text-decoration-thickness: 1px;
@@ -65,18 +60,6 @@ a:hover {
 .container-wide {
   width: min(100% - 2rem, var(--max-wide));
   margin-inline: auto;
-}
-
-/* EV cursor */
-.ev-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  pointer-events: none;
-  margin: -14px 0 0 -14px;
-  filter: drop-shadow(0 2px 6px rgba(13, 148, 136, 0.35));
-  transition: transform 0.08s ease-out;
 }
 
 /* Header */
@@ -206,107 +189,115 @@ a:hover {
   color: var(--text);
 }
 
-/* Hero doodles */
-.hero-doodles {
+/* Hero aside — focus pillars */
+.hero-aside {
   position: relative;
-  width: 100%;
-  max-width: 280px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.hero-doodles__map {
+.hero-mesh {
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-mesh__svg {
   width: 100%;
-  height: auto;
-  border-radius: 16px;
+  height: 100%;
+}
+
+.focus-stack {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.focus-card {
+  display: block;
+  padding: 1rem 1.15rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.focus-card:hover {
+  transform: translateX(4px);
+  border-color: rgba(13, 148, 136, 0.35);
+  box-shadow: var(--shadow);
+}
+
+.focus-card__label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.6;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.focus-card__title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.3rem;
+}
+
+.focus-card__text {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.hero-cta-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.hero-cta {
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-muted);
   border: 1px solid var(--border);
   background: var(--bg-card);
-  box-shadow: var(--shadow);
+  transition: all 0.15s ease;
 }
 
-.doodle-label {
-  font-family: var(--font-body);
-  font-size: 9px;
-  fill: var(--text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hero-avatar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-}
-
-.hero-avatar__ring {
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 2px dashed rgba(13, 148, 136, 0.35);
-  animation: spinSlow 20s linear infinite;
-}
-
-@keyframes spinSlow {
-  to { transform: rotate(360deg); }
-}
-
-.hero-avatar__inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
-  border: 3px solid white;
-  box-shadow: var(--shadow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-avatar__photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-avatar__initials {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
+.hero-cta:hover {
   color: var(--accent);
+  border-color: var(--accent);
 }
 
-.hero-avatar__doodle {
-  position: absolute;
-  font-size: 1.1rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-  animation: floatDoodle 3s ease-in-out infinite;
+.hero-cta--primary {
+  background: var(--accent);
+  color: white !important;
+  border-color: var(--accent);
 }
 
-.hero-avatar__doodle--bus {
-  top: -12px;
-  right: -8px;
-  animation-delay: 0s;
-}
-
-.hero-avatar__doodle--ev {
-  bottom: -6px;
-  left: -10px;
-  animation-delay: 1s;
-}
-
-.hero-avatar__doodle--pin {
-  top: 50%;
-  right: -18px;
-  animation-delay: 2s;
-}
-
-@keyframes floatDoodle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+.hero-cta--primary:hover {
+  background: #0f766e;
+  color: white !important;
 }
 
 /* Work cards */
@@ -443,20 +434,13 @@ a:hover {
   border: 1px solid var(--border);
 }
 
-.content-strip__label {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-warm);
-  margin-bottom: 0.4rem;
-}
-
 .content-strip h2 {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.35;
+  max-width: 28rem;
 }
 
 .content-strip p {
@@ -775,10 +759,12 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
-  .hero-doodles {
-    max-width: 220px;
-    order: -1;
-    margin-bottom: 1rem;
+  .hero-aside {
+    margin-top: 1.5rem;
+  }
+
+  .hero-mesh {
+    display: none;
   }
 
   .bento-grid--projects {
@@ -800,18 +786,11 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-avatar__ring,
-  .hero-avatar__doodle,
   .bento-card {
     animation: none;
   }
 
-  body.ev-cursor-active,
-  body.ev-cursor-active * {
-    cursor: auto !important;
-  }
-
-  .ev-cursor {
-    display: none;
+  .focus-card:hover {
+    transform: none;
   }
 }
