@@ -1,120 +1,107 @@
-import { MobilityVisual, RecognitionList, StoryList } from "@/components/site";
+import {
+  CurrentWork,
+  PastWork,
+  RecognitionList,
+} from "@/components/site";
 import { site } from "@/lib/content";
 
 export default function AboutPage() {
   return (
-    <div className="container prose">
-      <h1 className="page-title">About</h1>
+    <div className="container about-page">
+      <header className="about-hero">
+        <p className="location-pill">{site.location}</p>
+        <h1 className="page-title">{site.name}</h1>
+        <blockquote className="hook-quote">
+          I moved to Canada for graduate school and, one cold winter morning in
+          Waterloo, watched commuters waiting for a bus that never came on time.
+          That small moment stayed with me — I had always been curious about how
+          transportation systems work, and suddenly I wanted to build tools that
+          anticipate disruption instead of just reacting to it.
+        </blockquote>
+      </header>
 
-      <p className="lead">Hey, I&apos;m Tashneet! ⚡🚌</p>
+      <div className="prose">
+        <p>
+          I&apos;m pursuing a Master of Applied Computing (Thesis) at{" "}
+          <a
+            href="https://www.wlu.ca/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Wilfrid Laurier University
+          </a>
+          , working in{" "}
+          <a
+            href="https://www.wlu.ca/academics/faculties/faculty-of-science/departments-and-programs/computer-science/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Dr. Sukhjit Singh Sehra&apos;s SPIN Lab
+          </a>
+          . My research sits where <strong>AI</strong>,{" "}
+          <strong>algorithms</strong>, and <strong>urban mobility</strong> meet —
+          from forecasting transit demand to planning EV charging infrastructure
+          for the one in three Canadians who live in apartments and condos.
+        </p>
 
-      <p className="lead">
-        I&apos;m a Master of Applied Computing (Thesis) student at{" "}
-        <a
-          href="https://www.wlu.ca/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Wilfrid Laurier University
-        </a>{" "}
-        in Waterloo — building at the intersection of{" "}
-        <strong>artificial intelligence</strong>,{" "}
-        <strong>transportation</strong>, and{" "}
-        <strong>smart urban mobility</strong>.
-      </p>
+        <p>
+          Before Laurier, I completed my B.Tech in Computer Science in India,
+          spent time in cybersecurity and client operations at SafeAeon, and
+          contributed to open-source projects with global teams. Each step taught
+          me something different about building systems that actually ship — and
+          that&apos;s what I bring to research now.
+        </p>
+      </div>
 
-      <p>
-        My path hasn&apos;t been a straight line, and I think that&apos;s what
-        makes the work interesting. I started in cybersecurity — monitoring
-        threats, responding to incidents, and managing client operations — then
-        moved into open-source development, published research on transit
-        systems, and now lead the machine learning side of{" "}
-        <a
-          href="https://elocitytech.com/elocity-laurier-hiev-ai-ev-charging/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          HIEV-AI
-        </a>
-        , an industry collaboration with{" "}
-        <a
-          href="https://elocitytech.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Elocity Technologies
-        </a>
-        . What ties it all together is a fascination with systems that have to
-        work in the real world — whether that&apos;s securing a network,
-        shipping code with a global team, or helping a condo building figure out
-        where its EV chargers should go.
-      </p>
+      <section className="work-section work-section--current">
+        <h2>Currently working on</h2>
+        <CurrentWork />
+      </section>
 
-      <p>
-        I care about work where algorithms meet actual cities: predicting how
-        people move, planning infrastructure before it&apos;s too late, and
-        building software that helps communities transition to cleaner mobility.
-        I also believe technology works best when paired with clear
-        communication — something I practice as a teaching assistant, a
-        mentor, and a content creator.
-      </p>
-
-      <h2>Things I&apos;ve worked on</h2>
-      <StoryList />
+      <section className="work-section">
+        <h2>What I&apos;ve worked on</h2>
+        <PastWork />
+      </section>
 
       <RecognitionList />
 
-      <h2>Beyond the code</h2>
-      <p>
-        When I&apos;m not training models or reviewing pull requests,
-        you&apos;ll find me exploring emerging tech, reading about psychology
-        and human behaviour, creating content, or connecting with students on
-        campus. I&apos;m always glad to meet people who care about AI,
-        mobility, cybersecurity, or building things that actually matter.
-      </p>
+      <section className="prose closing-section">
+        <h2>Outside the lab</h2>
+        <p>
+          Track and field, badminton, mentoring students, and making technical
+          ideas easier to understand — whether in a classroom, on campus, or
+          through content. I care about representation in computing and hope to
+          keep working where clean technology, data, and transportation planning
+          shape how North American cities move.
+        </p>
 
-      <div className="connect-block">
-        <p>
-          Feel free to stroll through my <a href="/projects">projects</a>,
-          read my <a href="/research">research</a>, or connect on{" "}
-          <a
-            href={site.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-          .
-        </p>
-        <p>
-          My inbox is open:{" "}
-          <a href={`mailto:${site.email}`}>{site.email}</a>
-        </p>
-        <div className="connect-links">
-          <a
-            href={site.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-          <a href={site.links.github} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a
-            href={site.links.leetcode}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LeetCode
-          </a>
-          <a href={site.links.topmate} target="_blank" rel="noopener noreferrer">
-            Book a 1:1
-          </a>
+        <div className="connect-block">
+          <p>
+            <a href="/projects">Projects</a>
+            {" · "}
+            <a href="/research">Research</a>
+            {" · "}
+            <a
+              href={site.links.scholar}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Scholar
+            </a>
+            {" · "}
+            <a
+              href={site.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </p>
+          <p className="connect-email">
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </p>
         </div>
-      </div>
-
-      <MobilityVisual />
+      </section>
     </div>
   );
 }

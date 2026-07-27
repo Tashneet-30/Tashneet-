@@ -1,18 +1,27 @@
-import { publications } from "@/lib/content";
+import { publications, site } from "@/lib/content";
 
 export const metadata = {
   title: "Research — Tashneet Kaur",
   description:
-    "Publications and research in AI, digital twins, EV infrastructure, and smart mobility.",
+    "Publications in AI, digital twins, EV infrastructure, and smart mobility.",
 };
 
 export default function ResearchPage() {
   return (
     <div className="container">
-      <h1 className="page-title">Research</h1>
-      <p style={{ color: "var(--text-muted)", marginTop: "-0.5rem", marginBottom: "1.5rem" }}>
-        Peer-reviewed work and ongoing thesis research at the intersection of AI and mobility.
-      </p>
+      <header className="page-header">
+        <h1 className="page-title">Research</h1>
+        <p className="page-subtitle">
+          Peer-reviewed work from SPIN Lab, Laurier.{" "}
+          <a
+            href={site.links.scholar}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View all on Google Scholar →
+          </a>
+        </p>
+      </header>
 
       {publications.map((pub) => (
         <article key={pub.title} className="research-card">
@@ -26,14 +35,28 @@ export default function ResearchPage() {
           {pub.description && (
             <p className="research-description">{pub.description}</p>
           )}
+          {pub.links && pub.links.length > 0 && (
+            <div className="project-links">
+              {pub.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
         </article>
       ))}
 
-      <div className="thesis-block" style={{ marginTop: "2rem" }}>
-        <h2 style={{ marginTop: 0 }}>Ongoing Thesis</h2>
-        <p className="research-description" style={{ margin: 0 }}>
+      <div className="thesis-note">
+        <h2>Ongoing thesis</h2>
+        <p>
           EV charging infrastructure planning for multi-unit residential
-          buildings — ML developer on{" "}
+          buildings — building production-bound algorithms for{" "}
           <a
             href="https://elocitytech.com/elocity-laurier-hiev-ai-ev-charging/"
             target="_blank"
@@ -41,16 +64,7 @@ export default function ResearchPage() {
           >
             HIEV-AI
           </a>{" "}
-          with{" "}
-          <a
-            href="https://elocitytech.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Elocity Technologies
-          </a>
-          , funded by the Ontario Centre of Innovation. Wilfrid Laurier
-          University · 2025–2027.
+          with Elocity Technologies, funded by the Ontario Centre of Innovation.
         </p>
       </div>
     </div>
