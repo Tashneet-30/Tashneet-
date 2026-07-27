@@ -212,9 +212,13 @@ a:hover {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 2.5rem;
-  align-items: start;
+  grid-template-columns: 1fr minmax(260px, 32%);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.hero-content {
+  min-width: 0;
 }
 
 /* Profile photo */
@@ -222,10 +226,16 @@ a:hover {
   margin: 0;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .profile-photo__frame {
   position: relative;
+  flex: 1;
+  display: flex;
+  min-height: 0;
   padding: 3px;
   border-radius: 16px;
   background: var(--gradient-brand);
@@ -235,8 +245,8 @@ a:hover {
 .profile-photo__img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 5 / 6;
+  height: 100%;
+  min-height: 320px;
   object-fit: cover;
   object-position: center 22%;
   border-radius: 13px;
@@ -244,6 +254,7 @@ a:hover {
 }
 
 .profile-photo__caption {
+  flex-shrink: 0;
   margin: 0.55rem 0 0;
   text-align: center;
   font-size: 0.68rem;
@@ -313,7 +324,7 @@ a:hover {
   line-height: 1.7;
   color: var(--text);
   margin: 0;
-  max-width: 36rem;
+  max-width: none;
   font-weight: 400;
 }
 
@@ -322,7 +333,7 @@ a:hover {
   color: var(--text-muted);
   font-size: 0.98rem;
   line-height: 1.7;
-  max-width: 36rem;
+  max-width: none;
 }
 
 .hook-prose p:not(.page-intro) {
@@ -332,6 +343,9 @@ a:hover {
 /* Hero aside — profile only */
 .hero-aside {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .focus-row {
@@ -970,7 +984,22 @@ a:hover {
 
   .hero-aside {
     margin-top: 1.5rem;
-    max-width: 280px;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .profile-photo {
+    height: auto;
+  }
+
+  .profile-photo__frame {
+    flex: none;
+  }
+
+  .profile-photo__img {
+    height: auto;
+    aspect-ratio: 4 / 5;
+    min-height: 0;
   }
 
   .focus-stack {
