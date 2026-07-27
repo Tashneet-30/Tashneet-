@@ -9,7 +9,7 @@
   --accent-light: #e0e7ff;
   --accent-blue: #0ea5e9;
   --accent-violet: #8b5cf6;
-  --accent-warm: #f59e0b;
+  --accent-warm: #7c3aed;
   --border: rgba(99, 102, 241, 0.14);
   --shadow: 0 10px 36px rgba(79, 70, 229, 0.1);
   --shadow-lg: 0 20px 50px rgba(79, 70, 229, 0.16);
@@ -649,12 +649,17 @@ a:hover {
 }
 
 .bento-card__badge {
+  display: inline-block;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--accent-warm);
-  margin: 0 0 0.5rem;
+  color: var(--accent-hover);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.16);
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+  margin: 0 0 0.55rem;
 }
 
 .bento-card__meta {
