@@ -17,25 +17,6 @@ export default function AboutPage() {
             <h1 className="page-title">About</h1>
 
             <div className="hook-prose story-prose">
-              <p>
-                I have always been fascinated by the invisible systems that shape
-                everyday life — the roads we travel, the networks that connect us,
-                and the infrastructure that supports our communities.
-              </p>
-              <p>
-                After moving to Canada for graduate studies, a delayed bus on a
-                winter morning in Waterloo became a small but meaningful reminder
-                of how deeply transportation systems influence our daily
-                experiences. It sparked a bigger question: how can we use
-                technology not only to react to urban challenges, but to predict
-                and prepare for them?
-              </p>
-              <p>
-                Today, my work focuses on answering that question through
-                artificial intelligence, data-driven modelling, and computational
-                approaches — helping create cities that are more intelligent,
-                efficient, and sustainable.
-              </p>
               <p className="page-intro">
                 Hi, I&apos;m Tashneet — a Master of Applied Computing (Thesis)
                 student at{" "}
@@ -59,6 +40,25 @@ export default function AboutPage() {
                 </a>
                 , India — GPA 9.05/10 — where I first learned to connect code to
                 problems that reach beyond the screen.
+              </p>
+              <p>
+                I have always been fascinated by the invisible systems that shape
+                everyday life — the roads we travel, the networks that connect us,
+                and the infrastructure that supports our communities.
+              </p>
+              <p>
+                After moving to Canada for graduate studies, a delayed bus on a
+                winter morning in Waterloo became a small but meaningful reminder
+                of how deeply transportation systems influence our daily
+                experiences. It sparked a bigger question: how can we use
+                technology not only to react to urban challenges, but to predict
+                and prepare for them?
+              </p>
+              <p>
+                Today, my work focuses on answering that question through
+                artificial intelligence, data-driven modelling, and computational
+                approaches — helping create cities that are more intelligent,
+                efficient, and sustainable.
               </p>
             </div>
           </div>
