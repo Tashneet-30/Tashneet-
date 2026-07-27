@@ -1,20 +1,22 @@
 :root {
-  --bg: #f6f5ff;
-  --bg-soft: #ede9fe;
-  --bg-card: rgba(255, 255, 255, 0.82);
-  --text: #1a1744;
-  --text-muted: #5c5f7a;
-  --accent: #6366f1;
-  --accent-hover: #4f46e5;
-  --accent-light: #e0e7ff;
+  --bg: #f4f8ff;
+  --bg-soft: #e8f2ff;
+  --bg-card: rgba(255, 255, 255, 0.86);
+  --text: #0f172a;
+  --text-muted: #52607a;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-light: #dbeafe;
   --accent-blue: #0ea5e9;
-  --accent-violet: #8b5cf6;
+  --accent-ev: #10b981;
+  --accent-ai: #6366f1;
+  --accent-violet: #6366f1;
   --accent-warm: #7c3aed;
-  --border: rgba(99, 102, 241, 0.14);
-  --shadow: 0 10px 36px rgba(79, 70, 229, 0.1);
-  --shadow-lg: 0 20px 50px rgba(79, 70, 229, 0.16);
-  --gradient-brand: linear-gradient(135deg, #6366f1 0%, #0ea5e9 55%, #8b5cf6 100%);
-  --gradient-surface: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(237, 233, 254, 0.55) 100%);
+  --border: rgba(37, 99, 235, 0.14);
+  --shadow: 0 10px 36px rgba(37, 99, 235, 0.1);
+  --shadow-lg: 0 20px 50px rgba(37, 99, 235, 0.14);
+  --gradient-brand: linear-gradient(135deg, #2563eb 0%, #10b981 52%, #6366f1 100%);
+  --gradient-surface: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(219, 234, 254, 0.55) 100%);
   --max-width: 42rem;
   --max-wide: 58rem;
   --font-display: var(--font-display), Georgia, serif;
@@ -36,10 +38,10 @@ body {
   min-height: 100vh;
   background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse 55% 45% at 8% 0%, rgba(99, 102, 241, 0.22), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 92% 8%, rgba(14, 165, 233, 0.18), transparent 50%),
-    radial-gradient(ellipse 45% 35% at 75% 95%, rgba(139, 92, 246, 0.16), transparent 50%),
-    linear-gradient(165deg, #f5f3ff 0%, #eff6ff 48%, #faf5ff 100%);
+    radial-gradient(ellipse 55% 45% at 8% 0%, rgba(37, 99, 235, 0.16), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 92% 8%, rgba(16, 185, 129, 0.12), transparent 50%),
+    radial-gradient(ellipse 45% 35% at 75% 95%, rgba(99, 102, 241, 0.1), transparent 50%),
+    linear-gradient(165deg, #f4f8ff 0%, #eefbf6 48%, #f5f7ff 100%);
   color: var(--text);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -51,10 +53,54 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(99, 102, 241, 0.07) 1px, transparent 1px);
-  background-size: 22px 22px;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
   pointer-events: none;
+  z-index: -2;
+}
+
+/* Mobility backdrop — city network + EV routes */
+.mobility-backdrop {
+  position: fixed;
+  inset: 0;
   z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.mobility-backdrop__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mobility-route {
+  stroke-dasharray: 8 10;
+  animation: routeFlow 24s linear infinite;
+}
+
+.mobility-route--secondary {
+  animation-duration: 32s;
+  animation-direction: reverse;
+}
+
+.mobility-route--hero {
+  animation-duration: 18s;
+}
+
+.mobility-node-pulse {
+  animation: nodePulse 3s ease-in-out infinite;
+}
+
+@keyframes routeFlow {
+  to { stroke-dashoffset: -120; }
+}
+
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
 }
 
 a {
@@ -84,7 +130,7 @@ a:hover {
   top: 0;
   z-index: 100;
   padding: 0.9rem 0;
-  background: rgba(246, 245, 255, 0.78);
+  background: rgba(244, 248, 255, 0.82);
   backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid var(--border);
 }
@@ -133,7 +179,7 @@ a:hover {
 
 .nav-link:hover {
   color: var(--accent-hover);
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(37, 99, 235, 0.1);
 }
 
 .site-main {
@@ -145,8 +191,18 @@ a:hover {
   padding: 2.75rem 0 2.25rem;
   border-bottom: 1px solid var(--border);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, transparent 100%),
-    radial-gradient(ellipse 60% 80% at 100% 0%, rgba(99, 102, 241, 0.08), transparent 60%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, transparent 100%),
+    radial-gradient(ellipse 70% 80% at 100% 0%, rgba(16, 185, 129, 0.08), transparent 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-block--mobility::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(37, 99, 235, 0.03) 50%, transparent 100%);
+  pointer-events: none;
 }
 
 .hero-layout {
@@ -159,6 +215,8 @@ a:hover {
 /* Profile photo */
 .profile-photo {
   margin: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .profile-photo__frame {
@@ -175,9 +233,19 @@ a:hover {
   height: auto;
   aspect-ratio: 5 / 6;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 22%;
   border-radius: 13px;
   background: var(--bg-soft);
+}
+
+.profile-photo__caption {
+  margin: 0.55rem 0 0;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ev);
 }
 
 .profile-photo__fallback {
@@ -256,20 +324,19 @@ a:hover {
   gap: 1rem;
 }
 
-.hero-mesh {
+.mobility-hero-scene {
   position: absolute;
-  top: -20px;
-  right: -30px;
-  width: 200px;
-  height: 200px;
-  opacity: 0.55;
+  inset: -10px -20px auto auto;
+  width: 100%;
+  max-width: 320px;
   pointer-events: none;
   z-index: 0;
+  opacity: 0.75;
 }
 
-.hero-mesh__svg {
+.mobility-hero-scene__svg {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .focus-stack {
@@ -302,8 +369,8 @@ a:hover {
   display: block;
   font-size: 0.68rem;
   font-weight: 700;
-  color: var(--accent-violet);
-  opacity: 0.75;
+  color: var(--accent-ev);
+  opacity: 0.85;
   letter-spacing: 0.08em;
   margin-bottom: 0.25rem;
 }
@@ -429,7 +496,7 @@ a:hover {
   flex-shrink: 0;
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--accent-violet);
+  color: var(--accent);
   opacity: 0.7;
   font-variant-numeric: tabular-nums;
   padding-top: 0.2rem;
@@ -617,12 +684,40 @@ a:hover {
   padding-top: 2rem;
 }
 
+.page-header--mobility {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 1.4rem 1.6rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--gradient-surface);
+  box-shadow: var(--shadow);
+}
+
+.mobility-page-header-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.mobility-page-header-bg__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-header__content {
+  position: relative;
+  z-index: 1;
+}
+
 .page-eyebrow {
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent-violet);
+  color: var(--accent-ev);
   margin: 0 0 0.4rem;
 }
 
@@ -854,7 +949,7 @@ a:hover {
     margin-top: 1.5rem;
   }
 
-  .hero-mesh {
+  .mobility-hero-scene {
     display: none;
   }
 
@@ -887,5 +982,10 @@ a:hover {
 
   .hero-cta--primary:hover {
     transform: none;
+  }
+
+  .mobility-route,
+  .mobility-node-pulse {
+    animation: none;
   }
 }

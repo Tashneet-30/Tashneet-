@@ -11,7 +11,7 @@ import { site } from "@/lib/content";
 export default function AboutPage() {
   return (
     <div className="about-page">
-      <section className="hero-block">
+      <section className="hero-block hero-block--mobility">
         <div className="hero-layout container-wide">
           <div className="hero-content">
             <h1 className="page-title">About</h1>

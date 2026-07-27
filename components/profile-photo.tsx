@@ -1,31 +1,24 @@
-"use client";
-
-import Image from "next/image";
-import { useState } from "react";
+import { assetPath } from "@/lib/paths";
 import { site } from "@/lib/content";
 
 export function ProfilePhoto() {
-  const [missing, setMissing] = useState(false);
-
   return (
     <figure className="profile-photo">
       <div className="profile-photo__frame">
-        {!missing ? (
-          <Image
-            src={site.photo}
-            alt={`Portrait of ${site.name}`}
-            width={300}
-            height={360}
-            className="profile-photo__img"
-            onError={() => setMissing(true)}
-            priority
-          />
-        ) : (
-          <div className="profile-photo__fallback" aria-hidden="true">
-            TK
-          </div>
-        )}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={assetPath(site.photo)}
+          alt={`Portrait of ${site.name}`}
+          width={300}
+          height={360}
+          className="profile-photo__img"
+          loading="eager"
+          decoding="async"
+        />
       </div>
+      <figcaption className="profile-photo__caption">
+        AI · EV Infrastructure · Smart Mobility
+      </figcaption>
     </figure>
   );
 }
