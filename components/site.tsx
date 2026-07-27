@@ -102,7 +102,7 @@ export function ContentStrip() {
 
 export function ConnectPanel() {
   return (
-    <section className="connect-panel">
+    <section className="connect-panel section-card">
       <h2>Connect with me</h2>
       <p>
         When I&apos;m away from my research, I&apos;m usually exploring the world
