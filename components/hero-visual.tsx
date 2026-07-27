@@ -23,11 +23,17 @@ const pillars = [
   },
 ];
 
-export function HeroVisual() {
+export function HeroAside() {
   return (
-    <aside className="hero-aside" aria-label="Research focus areas">
+    <aside className="hero-aside" aria-label="Profile">
       <ProfilePhoto />
+    </aside>
+  );
+}
 
+export function FocusPillars() {
+  return (
+    <div className="focus-row">
       <div className="focus-stack">
         {pillars.map((item) => (
           <Link key={item.label} href={item.href} className="focus-card">
@@ -39,12 +45,16 @@ export function HeroVisual() {
       </div>
 
       <div className="hero-cta-row">
-        <Link href="/projects" className="hero-cta">Projects</Link>
-        <Link href="/research" className="hero-cta">Research</Link>
+        <Link href="/projects" className="hero-cta">
+          Projects
+        </Link>
+        <Link href="/research" className="hero-cta">
+          Research
+        </Link>
         <a href={`mailto:${site.email}`} className="hero-cta hero-cta--primary">
           Say hello
         </a>
       </div>
-    </aside>
+    </div>
   );
 }
