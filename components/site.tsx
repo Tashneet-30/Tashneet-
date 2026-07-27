@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, recognition, site, currentWork, pastWork } from "@/lib/content";
+import { nav, recognition, site, currentWork, pastWork, socialLinks } from "@/lib/content";
 
 export function Header() {
   return (
@@ -27,17 +27,15 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="container footer-inner">
-        <p>{new Date().getFullYear()} · {site.name} · {site.location}</p>
+        <p>
+          {new Date().getFullYear()} · {site.name} · {site.location}
+        </p>
         <div className="footer-links">
-          <a href={site.links.scholar} target="_blank" rel="noopener noreferrer">
-            Scholar
-          </a>
-          <a href={site.links.github} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
+          {socialLinks.slice(0, 4).map((link) => (
+            <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+              {link.label}
+            </a>
+          ))}
         </div>
       </div>
     </footer>
@@ -49,17 +47,16 @@ function WorkItems({ items }: { items: typeof currentWork }) {
     <ul className="work-list">
       {items.map((item, i) => (
         <li key={i}>
-          {item.text}
-          {item.link && (
-            <a
-              href={item.link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {item.link.label}
-            </a>
-          )}
-          {item.suffix}
+          <span className="work-list__num">{String(i + 1).padStart(2, "0")}</span>
+          <span className="work-list__text">
+            {item.text}
+            {item.link && (
+              <a href={item.link.href} target="_blank" rel="noopener noreferrer">
+                {item.link.label}
+              </a>
+            )}
+            {item.suffix}
+          </span>
         </li>
       ))}
     </ul>
@@ -75,45 +72,6 @@ export function TagList({ tags }: { tags: string[] }) {
         </span>
       ))}
     </div>
-  );
-}
-
-export function ProjectCard({
-  title,
-  description,
-  tags,
-  awards,
-  links,
-}: {
-  title: string;
-  description: string;
-  tags: string[];
-  awards?: string[];
-  links?: { href: string; label: string }[];
-}) {
-  return (
-    <article className="project-card">
-      <h2 className="project-title">{title}</h2>
-      <p className="project-description">{description}</p>
-      {awards && awards.length > 0 && (
-        <p className="project-awards">{awards.join(" · ")}</p>
-      )}
-      <TagList tags={tags} />
-      {links && links.length > 0 && (
-        <div className="project-links">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-      )}
-    </article>
   );
 }
 
@@ -140,3 +98,29 @@ export function RecognitionList() {
     </section>
   );
 }
+
+export function ContentStrip() {
+  return (
+    <section className="content-strip">
+      <div className="content-strip__label">Also creating</div>
+      <h2>Tech, stories &amp; the human side of research</h2>
+      <p>
+        I share what I&apos;m learning — emerging tech, student life in Canada,
+        and the quieter moments behind research — on social media and video.
+      </p>
+      <div className="content-strip__links">
+        <a href={site.links.instagram} target="_blank" rel="noopener noreferrer" className="social-chip">
+          Instagram
+        </a>
+        <a href={site.links.youtube} target="_blank" rel="noopener noreferrer" className="social-chip">
+          YouTube
+        </a>
+        <a href={site.links.linktree} target="_blank" rel="noopener noreferrer" className="social-chip social-chip--ghost">
+          All links
+        </a>
+      </div>
+    </section>
+  );
+}
+
+export { ConnectPanel } from "./bento";

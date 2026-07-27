@@ -1,107 +1,92 @@
 import {
+  ContentStrip,
+  ConnectPanel,
   CurrentWork,
   PastWork,
   RecognitionList,
 } from "@/components/site";
+import { Scene3D } from "@/components/scene-3d";
 import { site } from "@/lib/content";
 
 export default function AboutPage() {
   return (
-    <div className="container about-page">
-      <header className="about-hero">
-        <p className="location-pill">{site.location}</p>
-        <h1 className="page-title">{site.name}</h1>
-        <blockquote className="hook-quote">
-          I moved to Canada for graduate school and, one cold winter morning in
-          Waterloo, watched commuters waiting for a bus that never came on time.
-          That small moment stayed with me — I had always been curious about how
-          transportation systems work, and suddenly I wanted to build tools that
-          anticipate disruption instead of just reacting to it.
-        </blockquote>
-      </header>
-
-      <div className="prose">
-        <p>
-          I&apos;m pursuing a Master of Applied Computing (Thesis) at{" "}
-          <a
-            href="https://www.wlu.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Wilfrid Laurier University
-          </a>
-          , working in{" "}
-          <a
-            href="https://www.wlu.ca/academics/faculties/faculty-of-science/departments-and-programs/computer-science/index.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Dr. Sukhjit Singh Sehra&apos;s SPIN Lab
-          </a>
-          . My research sits where <strong>AI</strong>,{" "}
-          <strong>algorithms</strong>, and <strong>urban mobility</strong> meet —
-          from forecasting transit demand to planning EV charging infrastructure
-          for the one in three Canadians who live in apartments and condos.
-        </p>
-
-        <p>
-          Before Laurier, I completed my B.Tech in Computer Science in India,
-          spent time in cybersecurity and client operations at SafeAeon, and
-          contributed to open-source projects with global teams. Each step taught
-          me something different about building systems that actually ship — and
-          that&apos;s what I bring to research now.
-        </p>
-      </div>
-
-      <section className="work-section work-section--current">
-        <h2>Currently working on</h2>
-        <CurrentWork />
+    <div className="about-page">
+      <section className="hero-block container">
+        <Scene3D />
+        <div className="hero-content">
+          <p className="location-pill">{site.location}</p>
+          <h1 className="page-title">{site.name}</h1>
+          <div className="hook-prose">
+            <p>
+              I have always been fascinated by the invisible systems that shape
+              everyday life — the roads we travel, the networks that connect us,
+              and the infrastructure that supports our communities.
+            </p>
+            <p>
+              After moving to Canada for graduate studies, a delayed bus on a
+              winter morning in Waterloo became a small but meaningful reminder
+              of how deeply transportation systems influence our daily
+              experiences. It sparked a bigger question: how can we use
+              technology not only to react to urban challenges, but to predict
+              and prepare for them?
+            </p>
+            <p>
+              Today, my work focuses on answering that question through
+              artificial intelligence, data-driven modelling, and computational
+              approaches. At{" "}
+              <a
+                href="https://www.wlu.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Wilfrid Laurier University
+              </a>
+              , I am pursuing a Master of Applied Computing (Thesis) with the{" "}
+              <strong>SPIN Lab</strong> under{" "}
+              <a
+                href="https://www.linkedin.com/in/sukhjitsehra/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Dr. Sukhjit Singh Sehra
+              </a>
+              , exploring solutions for smarter mobility and sustainable
+              transportation — including AI-based EV adoption forecasting and
+              charging infrastructure planning for multi-unit residential
+              buildings.
+            </p>
+            <p>
+              My goal is to bridge the gap between emerging technologies and
+              real-world urban challenges, helping create cities that are more
+              intelligent, efficient, and sustainable.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section className="work-section">
-        <h2>What I&apos;ve worked on</h2>
-        <PastWork />
-      </section>
+      <div className="container">
+        <section className="work-section work-section--current">
+          <h2>Currently working on</h2>
+          <CurrentWork />
+        </section>
 
-      <RecognitionList />
+        <section className="work-section">
+          <h2>What I&apos;ve worked on</h2>
+          <PastWork />
+        </section>
 
-      <section className="prose closing-section">
-        <h2>Outside the lab</h2>
-        <p>
-          Track and field, badminton, mentoring students, and making technical
-          ideas easier to understand — whether in a classroom, on campus, or
-          through content. I care about representation in computing and hope to
-          keep working where clean technology, data, and transportation planning
-          shape how North American cities move.
-        </p>
+        <RecognitionList />
+        <ContentStrip />
+        <ConnectPanel />
 
-        <div className="connect-block">
+        <div className="connect-footer">
           <p>
-            <a href="/projects">Projects</a>
-            {" · "}
-            <a href="/research">Research</a>
-            {" · "}
-            <a
-              href={site.links.scholar}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Google Scholar
-            </a>
-            {" · "}
-            <a
-              href={site.links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </p>
-          <p className="connect-email">
+            Browse my <a href="/projects">projects</a> or{" "}
+            <a href="/research">research</a>. My inbox is open:{" "}
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </p>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

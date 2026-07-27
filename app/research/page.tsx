@@ -1,3 +1,4 @@
+import { BentoResearchCard } from "@/components/bento";
 import { publications, site } from "@/lib/content";
 
 export const metadata = {
@@ -8,55 +9,30 @@ export const metadata = {
 
 export default function ResearchPage() {
   return (
-    <div className="container">
+    <div className="container page-wide">
       <header className="page-header">
+        <p className="page-eyebrow">SPIN Lab · Laurier</p>
         <h1 className="page-title">Research</h1>
         <p className="page-subtitle">
-          Peer-reviewed work from SPIN Lab, Laurier.{" "}
-          <a
-            href={site.links.scholar}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View all on Google Scholar →
+          Peer-reviewed publications and ongoing thesis work.{" "}
+          <a href={site.links.scholar} target="_blank" rel="noopener noreferrer">
+            Google Scholar ↗
           </a>
         </p>
       </header>
 
-      {publications.map((pub) => (
-        <article key={pub.title} className="research-card">
-          <h2 className="research-title">
-            {pub.title}
-            {pub.status && <span className="status-badge">{pub.status}</span>}
-          </h2>
-          <p className="research-meta">
-            {pub.venue} · {pub.year}
-          </p>
-          {pub.description && (
-            <p className="research-description">{pub.description}</p>
-          )}
-          {pub.links && pub.links.length > 0 && (
-            <div className="project-links">
-              {pub.links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          )}
-        </article>
-      ))}
+      <div className="bento-grid bento-grid--research">
+        {publications.map((pub, i) => (
+          <BentoResearchCard key={pub.title} {...pub} index={i} />
+        ))}
+      </div>
 
       <div className="thesis-note">
-        <h2>Ongoing thesis</h2>
+        <span className="thesis-note__tag">Ongoing</span>
+        <h2>Thesis</h2>
         <p>
           EV charging infrastructure planning for multi-unit residential
-          buildings — building production-bound algorithms for{" "}
+          buildings — production-bound algorithms for{" "}
           <a
             href="https://elocitytech.com/elocity-laurier-hiev-ai-ev-charging/"
             target="_blank"

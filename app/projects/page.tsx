@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/components/site";
+import { BentoProjectCard } from "@/components/bento";
 import { projects, site } from "@/lib/content";
 
 export const metadata = {
@@ -9,23 +9,22 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="container">
+    <div className="container page-wide">
       <header className="page-header">
+        <p className="page-eyebrow">Selected work</p>
         <h1 className="page-title">Projects</h1>
         <p className="page-subtitle">
-          Research and engineering work — with links to code and papers.{" "}
-          <a
-            href={site.links.scholar}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google Scholar →
+          Research engineering with real-world impact.{" "}
+          <a href={site.links.scholar} target="_blank" rel="noopener noreferrer">
+            Google Scholar ↗
           </a>
         </p>
       </header>
-      {projects.map((project) => (
-        <ProjectCard key={project.slug} {...project} />
-      ))}
+      <div className="bento-grid bento-grid--projects">
+        {projects.map((project, i) => (
+          <BentoProjectCard key={project.slug} {...project} index={i} />
+        ))}
+      </div>
     </div>
   );
 }
