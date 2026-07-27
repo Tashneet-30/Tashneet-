@@ -10,12 +10,11 @@
   --accent-blue: #0ea5e9;
   --accent-ev: #10b981;
   --accent-ai: #6366f1;
-  --accent-violet: #6366f1;
-  --accent-warm: #7c3aed;
+  --accent-warm: #db2777;
   --border: rgba(37, 99, 235, 0.14);
   --shadow: 0 10px 36px rgba(37, 99, 235, 0.1);
   --shadow-lg: 0 20px 50px rgba(37, 99, 235, 0.14);
-  --gradient-brand: linear-gradient(135deg, #2563eb 0%, #10b981 52%, #6366f1 100%);
+  --gradient-brand: linear-gradient(135deg, #2563eb 0%, #10b981 48%, #6366f1 88%);
   --gradient-surface: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(219, 234, 254, 0.55) 100%);
   --max-width: 42rem;
   --max-wide: 58rem;
@@ -54,53 +53,61 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(rgba(37, 99, 235, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
   pointer-events: none;
   z-index: -2;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 70%);
 }
 
-/* Mobility backdrop — city network + EV routes */
+/* Mobility backdrop — soft urban atmosphere, no animation */
 .mobility-backdrop {
   position: fixed;
   inset: 0;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  opacity: 0.55;
 }
 
-.mobility-backdrop__svg {
+.mobility-backdrop__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.mobility-backdrop__glow--blue {
+  width: 42vw;
+  height: 42vw;
+  top: -8%;
+  left: -6%;
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.mobility-backdrop__glow--ev {
+  width: 36vw;
+  height: 36vw;
+  top: 8%;
+  right: -8%;
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.mobility-backdrop__glow--warm {
+  width: 28vw;
+  height: 28vw;
+  bottom: 12%;
+  left: 35%;
+  background: rgba(219, 39, 119, 0.05);
+}
+
+.mobility-backdrop__skyline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-}
-
-.mobility-route {
-  stroke-dasharray: 8 10;
-  animation: routeFlow 24s linear infinite;
-}
-
-.mobility-route--secondary {
-  animation-duration: 32s;
-  animation-direction: reverse;
-}
-
-.mobility-route--hero {
-  animation-duration: 18s;
-}
-
-.mobility-node-pulse {
-  animation: nodePulse 3s ease-in-out infinite;
-}
-
-@keyframes routeFlow {
-  to { stroke-dashoffset: -120; }
-}
-
-@keyframes nodePulse {
-  0%, 100% { opacity: 0.55; }
-  50% { opacity: 1; }
+  height: auto;
+  min-height: 180px;
+  opacity: 0.9;
 }
 
 a {
@@ -243,9 +250,17 @@ a:hover {
   text-align: center;
   font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--accent-ev);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.profile-photo__caption strong {
+  display: block;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
 }
 
 .profile-photo__fallback {
@@ -325,18 +340,7 @@ a:hover {
 }
 
 .mobility-hero-scene {
-  position: absolute;
-  inset: -10px -20px auto auto;
-  width: 100%;
-  max-width: 320px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.75;
-}
-
-.mobility-hero-scene__svg {
-  width: 100%;
-  height: auto;
+  display: none;
 }
 
 .focus-stack {
@@ -949,10 +953,6 @@ a:hover {
     margin-top: 1.5rem;
   }
 
-  .mobility-hero-scene {
-    display: none;
-  }
-
   .bento-grid--projects {
     grid-template-columns: 1fr;
   }
@@ -982,10 +982,5 @@ a:hover {
 
   .hero-cta--primary:hover {
     transform: none;
-  }
-
-  .mobility-route,
-  .mobility-node-pulse {
-    animation: none;
   }
 }
