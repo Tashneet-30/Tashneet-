@@ -162,31 +162,21 @@ a:hover {
   color: var(--text);
 }
 
-.page-intro {
-  font-size: 1.05rem;
-  line-height: 1.65;
+.story-prose .page-intro {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
   color: var(--text);
-  margin: 0 0 1rem;
+  font-size: 1.02rem;
+}
+
+.page-intro {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0;
   max-width: 36rem;
   font-weight: 400;
-}
-
-.page-headline {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  margin: 0 0 0.5rem;
-  line-height: 1.45;
-  max-width: 34rem;
-}
-
-.page-tagline-pills {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--accent-blue);
-  margin: 0 0 1.35rem;
 }
 
 .hook-prose p {
