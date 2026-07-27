@@ -8,6 +8,7 @@ export const site = {
   url: "https://tashneet-30.github.io/Tashneet-",
   email: "kaur6910@mylaurier.ca",
   location: "Waterloo, Ontario",
+  photo: "/photo.jpg",
   links: {
     github: "https://github.com/Tashneet-30",
     linkedin: "https://www.linkedin.com/in/tashneetkaur343/",

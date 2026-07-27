@@ -151,9 +151,46 @@ a:hover {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1fr 280px;
+  grid-template-columns: 1fr 300px;
   gap: 2.5rem;
   align-items: start;
+}
+
+/* Profile photo */
+.profile-photo {
+  margin: 0;
+}
+
+.profile-photo__frame {
+  position: relative;
+  padding: 3px;
+  border-radius: 16px;
+  background: var(--gradient-brand);
+  box-shadow: var(--shadow-lg);
+}
+
+.profile-photo__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 6;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 13px;
+  background: var(--bg-soft);
+}
+
+.profile-photo__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 5 / 6;
+  border-radius: 13px;
+  background: var(--gradient-surface);
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--accent);
 }
 
 .location-pill {
