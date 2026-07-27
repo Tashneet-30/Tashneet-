@@ -2,9 +2,9 @@ export const site = {
   name: "Tashneet Kaur",
   title: "Tashneet Kaur",
   headline: "Building intelligent systems for smarter, more sustainable cities.",
-  tagline: "AI · Mobility · Data-Driven Infrastructure",
+  tagline: "AI Researcher • Intelligent Transportation Systems • Smart Cities",
   description:
-    "Graduate researcher building AI-driven forecasting and optimization for EV infrastructure, transit systems, and sustainable urban mobility.",
+    "AI researcher focused on intelligent transportation systems, smart cities, and data-driven urban mobility.",
   url: "https://tashneet-30.github.io/Tashneet-",
   email: "kaur6910@mylaurier.ca",
   location: "Waterloo, Ontario",
@@ -21,6 +21,7 @@ export const site = {
     gradStudentLeaders:
       "https://students.wlu.ca/support-and-wellness/international-student-support/international-student-leaders.html",
     ccidsa: "https://ccidsa.com/",
+    gndec: "https://gndec.ac.in/",
   },
 };
 

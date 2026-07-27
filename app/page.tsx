@@ -14,24 +14,9 @@ export default function AboutPage() {
       <section className="hero-block">
         <div className="hero-layout container-wide">
           <div className="hero-content">
-            <p className="location-pill">{site.location}</p>
             <h1 className="page-title">About</h1>
-            <p className="page-intro">
-              Hi, I&apos;m Tashneet — a Master of Applied Computing (Thesis)
-              student at{" "}
-              <a
-                href={site.links.laurier}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Wilfrid Laurier University
-              </a>
-              , where I research how artificial intelligence and data-driven
-              technologies can help build smarter, more sustainable cities.
-            </p>
-            <p className="page-headline">{site.headline}</p>
 
-            <div className="hook-prose">
+            <div className="hook-prose story-prose">
               <p>
                 I have always been fascinated by the invisible systems that shape
                 everyday life — the roads we travel, the networks that connect us,
@@ -50,6 +35,30 @@ export default function AboutPage() {
                 artificial intelligence, data-driven modelling, and computational
                 approaches — helping create cities that are more intelligent,
                 efficient, and sustainable.
+              </p>
+              <p className="page-intro">
+                Hi, I&apos;m Tashneet — a Master of Applied Computing (Thesis)
+                student at{" "}
+                <a
+                  href={site.links.laurier}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Wilfrid Laurier University
+                </a>
+                , where I research how artificial intelligence and data-driven
+                technologies can help build smarter, more sustainable cities.
+                Before this, I earned my bachelor&apos;s in Computer Science
+                &amp; Engineering from{" "}
+                <a
+                  href={site.links.gndec}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Guru Nanak Dev Engineering College (GNDEC)
+                </a>
+                , India — GPA 9.05/10 — where I first learned to connect code to
+                problems that reach beyond the screen.
               </p>
             </div>
           </div>
