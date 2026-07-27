@@ -8,7 +8,7 @@ export function Header() {
       <div className="header-inner">
         <div className="brand">
           <Link href="/" className="site-logo">
-            {site.name}
+            Tashneet
           </Link>
           <span className="site-tagline">{site.tagline}</span>
         </div>

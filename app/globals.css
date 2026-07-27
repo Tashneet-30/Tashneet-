@@ -151,20 +151,29 @@ a:hover {
 
 .page-title {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-size: clamp(2.2rem, 5vw, 2.75rem);
   font-weight: 600;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
   letter-spacing: -0.03em;
   line-height: 1.1;
   color: var(--text);
 }
 
+.page-intro {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0 0 1rem;
+  max-width: 36rem;
+  font-weight: 400;
+}
+
 .page-headline {
   font-family: var(--font-display);
-  font-size: 1.12rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  color: var(--text);
-  margin: 0 0 0.6rem;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
   line-height: 1.45;
   max-width: 34rem;
 }
@@ -174,7 +183,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--accent-blue);
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.35rem;
 }
 
 .hook-prose p {
@@ -186,7 +195,7 @@ a:hover {
 }
 
 .hook-prose p:first-child {
-  color: var(--text);
+  color: var(--text-muted);
 }
 
 /* Hero aside — focus pillars */

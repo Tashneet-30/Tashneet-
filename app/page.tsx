@@ -15,7 +15,19 @@ export default function AboutPage() {
         <div className="hero-layout container-wide">
           <div className="hero-content">
             <p className="location-pill">{site.location}</p>
-            <h1 className="page-title">{site.name}</h1>
+            <h1 className="page-title">Hi, I&apos;m Tashneet.</h1>
+            <p className="page-intro">
+              I&apos;m a Master of Applied Computing (Thesis) student at{" "}
+              <a
+                href={site.links.laurier}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Wilfrid Laurier University
+              </a>
+              , where I research how artificial intelligence and data-driven
+              technologies can help build smarter, more sustainable cities.
+            </p>
             <p className="page-headline">{site.headline}</p>
             <p className="page-tagline-pills">{site.tagline}</p>
 

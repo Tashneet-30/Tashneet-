@@ -18,6 +18,9 @@ export const site = {
     oci: "https://www.oc-innovation.ca/",
     laurier: "https://www.wlu.ca/",
     spinLab: "https://www.linkedin.com/in/sukhjitsehra/",
+    gradStudentLeaders:
+      "https://students.wlu.ca/support-and-wellness/international-student-support/international-student-leaders.html",
+    ccidsa: "https://ccidsa.com/",
   },
 };
 
@@ -70,7 +73,21 @@ export const currentWork: WorkItem[] = [
   {
     title: "Graduate International Student Leadership",
     parts: [
-      { type: "text", value: "Working with Laurier International as a Graduate International Student Leader, supporting international students through mentorship, community-building initiatives, and creating a more connected graduate experience." },
+      {
+        type: "text",
+        value:
+          "Serving as a ",
+      },
+      {
+        type: "link",
+        value: "Graduate International Student Leader",
+        href: site.links.gradStudentLeaders,
+      },
+      {
+        type: "text",
+        value:
+          " with Laurier International — supporting international students through mentorship, community-building initiatives, and creating a more connected graduate experience.",
+      },
     ],
   },
 ];
@@ -119,8 +136,10 @@ export const pastWork: WorkItem[] = [
       {
         type: "text",
         value:
-          "Researched parallel optimization techniques for Quad-RRT path planning, improving computational efficiency through OpenMP-based parallelization. Accepted at CCIDSA 2026, Lakehead University.",
+          "Researched parallel optimization techniques for Quad-RRT path planning, improving computational efficiency through OpenMP-based parallelization. Accepted at ",
       },
+      { type: "link", value: "CCIDSA 2026", href: site.links.ccidsa },
+      { type: "text", value: ", Lakehead University." },
     ],
   },
 ];
@@ -211,6 +230,7 @@ export const projects: Project[] = [
     awards: ["CCIDSA 2026"],
     links: [
       { href: "https://github.com/Tashneet-30/cp631project", label: "GitHub" },
+      { href: site.links.ccidsa, label: "CCIDSA" },
     ],
   },
 ];
@@ -245,7 +265,10 @@ export const publications: Publication[] = [
     year: "2026",
     status: "Accepted",
     description: "Parallel computing for autonomous navigation path planning.",
-    links: [{ href: site.links.scholar, label: "Scholar" }],
+    links: [
+      { href: site.links.scholar, label: "Scholar" },
+      { href: site.links.ccidsa, label: "CCIDSA" },
+    ],
   },
   {
     title:
