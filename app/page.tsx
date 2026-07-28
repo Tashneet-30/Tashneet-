@@ -6,7 +6,6 @@ import {
   RecognitionList,
 } from "@/components/site";
 import { HeroAside } from "@/components/hero-visual";
-import { StatusBanner } from "@/components/status-banner";
 import { site } from "@/lib/content";
 
 export default function AboutPage() {
@@ -66,8 +65,6 @@ export default function AboutPage() {
             </div>
             <HeroAside />
           </div>
-
-          <StatusBanner />
         </div>
       </section>
 
