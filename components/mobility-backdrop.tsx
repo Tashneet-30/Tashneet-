@@ -8,7 +8,7 @@ export function MobilityBackdrop() {
         xmlns="http://www.w3.org/2000/svg"
       >
         {/* Transit route lines — single hairline weight */}
-        <g fill="none" stroke="#111111" strokeWidth="1" strokeOpacity="0.05">
+        <g fill="none" stroke="#1c1a17" strokeWidth="1" strokeOpacity="0.07">
           <path d="M-60 300 H360 L520 460 H1500" />
           <path d="M-60 640 H240 L400 480 H1500" />
           <path d="M220 -60 V240 L380 400 V960" />
@@ -16,7 +16,7 @@ export function MobilityBackdrop() {
         </g>
 
         {/* Route stops */}
-        <g fill="#111111" fillOpacity="0.07">
+        <g fill="#1c1a17" fillOpacity="0.1">
           {[
             [360, 300],
             [520, 460],
