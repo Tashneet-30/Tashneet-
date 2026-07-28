@@ -16,7 +16,7 @@ export function ProfilePhoto() {
       </div>
       <figcaption className="profile-photo__caption">
         <strong>Smart Mobility Research</strong>
-        EV infrastructure · Transit AI · Urban systems
+        EV infrastructure · Transit AI
       </figcaption>
     </figure>
   );
