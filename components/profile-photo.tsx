@@ -15,8 +15,8 @@ export function ProfilePhoto() {
         />
       </div>
       <figcaption className="profile-photo__caption">
-        <strong>Graduate Researcher</strong>
-        AI for transportation &amp; sustainable cities
+        <strong>Smart Mobility Research</strong>
+        EV infrastructure · Transit AI · Urban systems
       </figcaption>
     </figure>
   );
