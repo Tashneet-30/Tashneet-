@@ -1,6 +1,6 @@
 :root {
-  --bg: #f2efe8;
-  --bg-soft: #e9e5db;
+  --bg: #f0ece4;
+  --bg-soft: #e7e2d8;
   --bg-card: #fdfcfa;
   --text: #1c1a17;
   --text-muted: #6d675e;
@@ -44,20 +44,40 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Mobility backdrop — hairline transit lines */
+/* Site backdrop — warm wash, contour lines, paper grain */
 .mobility-backdrop {
   position: fixed;
   inset: 0;
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
+  background: var(--bg);
 }
 
-.mobility-backdrop__lines {
+.mobility-backdrop__wash {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% -25%, rgba(253, 252, 250, 0.95) 0%, transparent 58%),
+    radial-gradient(ellipse 65% 50% at 92% 98%, rgba(28, 26, 23, 0.045) 0%, transparent 52%),
+    radial-gradient(ellipse 50% 40% at 4% 75%, rgba(28, 26, 23, 0.035) 0%, transparent 48%);
+}
+
+.mobility-backdrop__contours {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.mobility-backdrop__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.32;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  mix-blend-mode: multiply;
 }
 
 a {
@@ -87,7 +107,7 @@ a:hover {
   top: 0;
   z-index: 100;
   padding: 0.9rem 0;
-  background: rgba(242, 239, 232, 0.88);
+  background: rgba(240, 236, 228, 0.88);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -625,16 +645,6 @@ a:hover {
   position: relative;
   padding: 0 0 1.5rem;
   border-bottom: 1px solid var(--border);
-}
-
-.mobility-page-header-bg {
-  display: none;
-}
-
-.mobility-page-header-bg__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .page-header__content {
