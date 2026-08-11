@@ -1,5 +1,4 @@
 import { BentoResearchCard } from "@/components/bento";
-import { MobilityPageHeader } from "@/components/mobility-scene";
 import { publications, site } from "@/lib/content";
 
 export const metadata = {
@@ -12,7 +11,6 @@ export default function ResearchPage() {
   return (
     <div className="container page-wide">
       <header className="page-header page-header--mobility">
-        <MobilityPageHeader />
         <div className="page-header__content">
           <p className="page-eyebrow">AI · Mobility · Urban Systems</p>
           <h1 className="page-title">Research</h1>

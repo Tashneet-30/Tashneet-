@@ -1,5 +1,4 @@
 import { BentoProjectCard } from "@/components/bento";
-import { MobilityPageHeader } from "@/components/mobility-scene";
 import { projects, site } from "@/lib/content";
 
 export const metadata = {
@@ -12,7 +11,6 @@ export default function ProjectsPage() {
   return (
     <div className="container page-wide">
       <header className="page-header page-header--mobility">
-        <MobilityPageHeader />
         <div className="page-header__content">
           <p className="page-eyebrow">EV · Transit · Smart Cities</p>
           <h1 className="page-title">Projects</h1>
