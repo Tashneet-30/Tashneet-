@@ -15,13 +15,7 @@ export default function AboutPage() {
         <div className="container-wide">
           <div className="hero-layout">
             <div className="hero-content">
-              <p className="terminal-eyebrow">
-                <span className="terminal-eyebrow__dot" />
-                whoami
-              </p>
-              <h1 className="page-title">
-                About<span className="page-title__cursor">_</span>
-              </h1>
+              <h1 className="page-title">About</h1>
 
               <div className="terminal-window">
                 <div className="terminal-window__bar">
@@ -33,6 +27,9 @@ export default function AboutPage() {
                   <span className="terminal-window__title">bio.md</span>
                 </div>
                 <div className="hook-prose story-prose terminal-window__body">
+                  <p className="terminal-prompt">
+                    whoami<span className="terminal-prompt__cursor">_</span>
+                  </p>
                   <p className="page-intro">
                     Hi, I&apos;m Tashneet — a Master of Applied Computing (Thesis)
                     student at{" "}
