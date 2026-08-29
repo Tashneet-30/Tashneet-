@@ -7,7 +7,9 @@ export function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="site-logo">
+          <span className="site-logo__bracket">&lt;</span>
           {site.name}
+          <span className="site-logo__bracket">/&gt;</span>
         </Link>
         <nav className="site-nav" aria-label="Main navigation">
           {nav.map((item) => (
@@ -16,7 +18,7 @@ export function Header() {
             </Link>
           ))}
           <a href={`mailto:${site.email}`} className="nav-cta">
-            Say hello
+            say_hello()
           </a>
         </nav>
       </div>
