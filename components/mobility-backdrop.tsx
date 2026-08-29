@@ -1,49 +1,45 @@
 export function MobilityBackdrop() {
   return (
-    <div className="mobility-backdrop" aria-hidden="true">
-      <div className="mobility-backdrop__wash" />
+    <div className="tech-backdrop" aria-hidden="true">
+      <div className="tech-backdrop__glow tech-backdrop__glow--cyan" />
+      <div className="tech-backdrop__glow tech-backdrop__glow--violet" />
+      <div className="tech-backdrop__grid" />
       <svg
-        className="mobility-backdrop__contours"
+        className="tech-backdrop__circuit"
         viewBox="0 0 1440 900"
         preserveAspectRatio="xMidYMid slice"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g fill="none" stroke="#1c1a17" strokeWidth="0.75">
+        <g fill="none" strokeWidth="1">
           <path
-            strokeOpacity="0.05"
-            d="M-120 180 C 180 140, 420 220, 720 170 S 1260 120, 1560 200"
+            className="tech-backdrop__trace tech-backdrop__trace--a"
+            d="M-40 120 H 260 L 320 180 H 620 L 680 120 H 980 L 1040 180 H 1480"
           />
           <path
-            strokeOpacity="0.044"
-            d="M-120 310 C 240 270, 520 350, 820 300 S 1300 250, 1560 330"
+            className="tech-backdrop__trace tech-backdrop__trace--b"
+            d="M-40 760 H 220 L 280 700 H 560 L 620 760 H 940 L 1000 700 H 1480"
           />
           <path
-            strokeOpacity="0.038"
-            d="M-120 440 C 200 400, 480 480, 780 430 S 1280 380, 1560 460"
+            className="tech-backdrop__trace tech-backdrop__trace--c"
+            d="M120 -40 V 220 L 180 280 V 560 L 120 620 V 940"
           />
           <path
-            strokeOpacity="0.032"
-            d="M-120 570 C 160 530, 440 610, 740 560 S 1240 510, 1560 590"
+            className="tech-backdrop__trace tech-backdrop__trace--d"
+            d="M1320 -40 V 260 L 1260 320 V 600 L 1320 660 V 940"
           />
-          <path
-            strokeOpacity="0.028"
-            d="M-120 700 C 220 660, 500 740, 800 690 S 1320 640, 1560 720"
-          />
-          <path
-            strokeOpacity="0.024"
-            d="M280 -80 C 260 200, 300 420, 320 640 S 360 880, 340 980"
-          />
-          <path
-            strokeOpacity="0.02"
-            d="M720 -80 C 700 180, 740 400, 760 620 S 800 860, 780 980"
-          />
-          <path
-            strokeOpacity="0.018"
-            d="M1160 -80 C 1140 200, 1180 420, 1200 640 S 1240 880, 1220 980"
-          />
+          <circle className="tech-backdrop__node" cx="320" cy="180" r="3.5" />
+          <circle className="tech-backdrop__node" cx="680" cy="120" r="3.5" />
+          <circle className="tech-backdrop__node" cx="1040" cy="180" r="3.5" />
+          <circle className="tech-backdrop__node" cx="280" cy="700" r="3.5" />
+          <circle className="tech-backdrop__node" cx="620" cy="760" r="3.5" />
+          <circle className="tech-backdrop__node" cx="1000" cy="700" r="3.5" />
+          <circle className="tech-backdrop__node" cx="180" cy="280" r="3.5" />
+          <circle className="tech-backdrop__node" cx="1260" cy="320" r="3.5" />
         </g>
       </svg>
-      <div className="mobility-backdrop__grain" />
+      <div className="tech-backdrop__scanline" />
+      <div className="tech-backdrop__vignette" />
+      <div className="tech-backdrop__grain" />
     </div>
   );
 }
